@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import '../../core/utils/responsive.dart';
+import 'package:devolio_flutter/core/utils/responsive.dart';
 
 class AppNavbar extends StatelessWidget {
-  final Function(String section) onMenuTap;
+  final void Function(String section) onMenuTap;
+  final String activeSection;
 
-  const AppNavbar({super.key, required this.onMenuTap});
+  const AppNavbar({
+    super.key,
+    required this.onMenuTap,
+    required this.activeSection,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -12,22 +17,25 @@ class AppNavbar extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-      child: isDesktop ? _DesktopNav(onMenuTap) : _MobileNav(onMenuTap),
+      child: isDesktop
+          ? _DesktopNav(onMenuTap, activeSection)
+          : _MobileNav(onMenuTap),
     );
   }
 }
 
 class _MobileNav extends StatelessWidget {
-  final Function(String) onMenuTap;
 
   const _MobileNav(this.onMenuTap);
+
+  final void Function(String) onMenuTap;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Text("Devolio"),
+        const Text('Devolio'),
         PopupMenuButton<String>(
           onSelected: onMenuTap,
           itemBuilder: (context) => const [
@@ -36,31 +44,49 @@ class _MobileNav extends StatelessWidget {
             PopupMenuItem(value: 'projects', child: Text('Projects')),
             PopupMenuItem(value: 'contact', child: Text('Contact')),
           ],
-        )
+        ),
       ],
     );
   }
 }
 
 class _DesktopNav extends StatelessWidget {
-  final Function(String) onMenuTap;
 
-  const _DesktopNav(this.onMenuTap);
+  const _DesktopNav(this.onMenuTap, this.activeSection);
+  
+  final void Function(String) onMenuTap;
+  final String activeSection;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Text("Devolio"),
+        const Text('Devolio'),
         Row(
           children: [
-            _NavItem("Home", () => onMenuTap('home')),
-            _NavItem("About", () => onMenuTap('about')),
-            _NavItem("Projects", () => onMenuTap('projects')),
-            _NavItem("Contact", () => onMenuTap('contact')),
+            _NavItem(
+              'Home',
+              () => onMenuTap('home'),
+              isActive: activeSection == 'home',
+            ),
+            _NavItem(
+              'About',
+              () => onMenuTap('about'),
+              isActive: activeSection == 'about',
+            ),
+            _NavItem(
+              'Projects',
+              () => onMenuTap('projects'),
+              isActive: activeSection == 'projects',
+            ),
+            _NavItem(
+              'Contact',
+              () => onMenuTap('contact'),
+              isActive: activeSection == 'contact',
+            ),
           ],
-        )
+        ),
       ],
     );
   }
@@ -68,9 +94,10 @@ class _DesktopNav extends StatelessWidget {
 
 class _NavItem extends StatelessWidget {
   final String title;
+  final bool isActive;
   final VoidCallback onTap;
 
-  const _NavItem(this.title, this.onTap);
+  const _NavItem(this.title, this.onTap, {this.isActive = false});
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +105,13 @@ class _NavItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 12),
       child: InkWell(
         onTap: onTap,
-        child: Text(title),
+        child: Text(
+          title,
+          style: TextStyle(
+            color: isActive ? Colors.blue : Colors.white,
+            fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
+          ),
+        ),
       ),
     );
   }

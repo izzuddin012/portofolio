@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../constants/breakpoints.dart';
+import 'package:devolio_flutter/core/constants/breakpoints.dart';
 
 class Responsive {
   static bool isMobile(BuildContext context) =>

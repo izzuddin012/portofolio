@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../core/utils/responsive.dart';
+import 'package:devolio_flutter/core/utils/responsive.dart';
 
 class AppContainer extends StatelessWidget {
   final Widget child;
