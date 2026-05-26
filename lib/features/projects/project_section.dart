@@ -279,6 +279,18 @@ class _ProjectCardState extends State<ProjectCard> {
                           Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
+                              if (p.appStoreUrl != null)
+                                _IconLink(
+                                  icon: Icons.apple_rounded,
+                                  url: p.appStoreUrl!,
+                                  tooltip: 'App Store',
+                                ),
+                              if (p.playStoreUrl != null)
+                                _IconLink(
+                                  icon: Icons.android_rounded,
+                                  url: p.playStoreUrl!,
+                                  tooltip: 'Play Store',
+                                ),
                               if (p.githubUrl != null)
                                 _IconLink(
                                   icon: Icons.code_rounded,
@@ -626,14 +638,30 @@ class _ProjectDetailSheet extends StatelessWidget {
                               }).toList(),
                             ),
 
-                            // Action buttons (github / demo)
-                            if (project.githubUrl != null ||
+                            // Action buttons (store / github / demo)
+                            if (project.appStoreUrl != null ||
+                                project.playStoreUrl != null ||
+                                project.githubUrl != null ||
                                 project.demoUrl != null) ...[
                               const SizedBox(height: 28),
                               Wrap(
                                 spacing: 12,
                                 runSpacing: 12,
                                 children: [
+                                  if (project.appStoreUrl != null)
+                                    _DetailActionBtn(
+                                      label: 'APP STORE',
+                                      icon: Icons.apple_rounded,
+                                      url: project.appStoreUrl!,
+                                      filled: true,
+                                    ),
+                                  if (project.playStoreUrl != null)
+                                    _DetailActionBtn(
+                                      label: 'PLAY STORE',
+                                      icon: Icons.android_rounded,
+                                      url: project.playStoreUrl!,
+                                      filled: true,
+                                    ),
                                   if (project.githubUrl != null)
                                     _DetailActionBtn(
                                       label: 'VIEW SOURCE',
