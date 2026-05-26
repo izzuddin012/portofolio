@@ -60,15 +60,15 @@ class _FormColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SectionTitle(
+        SectionTitle(
           AppConstants.contactHeading,
           subtitle: 'Have a project in mind or want to collaborate?',
         ),
-        const SizedBox(height: 36),
-        const _ContactForm(),
+        SizedBox(height: 36),
+        _ContactForm(),
       ],
     );
   }
@@ -88,7 +88,7 @@ class _SideColumn extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // ── Quick contact info ────────────────────────────────────────────
-        _Label('QUICK INFO'),
+        const _Label('QUICK INFO'),
         const SizedBox(height: 20),
         const _ContactRow(
           icon: Icons.email_outlined,
@@ -115,11 +115,11 @@ class _SideColumn extends StatelessWidget {
         const SizedBox(height: 40),
 
         // ── Social links ──────────────────────────────────────────────────
-        _Label('FIND ME ONLINE'),
+        const _Label('FIND ME ONLINE'),
         const SizedBox(height: 12),
         Text(
-          "I share open-source work, engineering insights, and the occasional "
-          "project update — reach out on any of these platforms.",
+          'I share open-source work, engineering insights, and the occasional '
+          'project update — reach out on any of these platforms.',
           style: AppTypography.bodySm.copyWith(
             color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
           ),

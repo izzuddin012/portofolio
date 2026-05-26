@@ -5,8 +5,6 @@ import 'package:devolio_flutter/core/theme/app_colors.dart';
 import 'package:devolio_flutter/core/theme/app_typography.dart';
 import 'package:devolio_flutter/shared/layout/app_container.dart';
 import 'package:devolio_flutter/shared/widgets/section_title.dart';
-import 'package:devolio_flutter/features/experience/experience_data.dart';
-import 'package:devolio_flutter/features/experience/experience_model.dart';
 
 class ExperienceSection extends StatelessWidget {
   const ExperienceSection({super.key});

@@ -163,7 +163,7 @@ class _LogoState extends State<_Logo> {
                     ? AppColors.textPrimary
                     : AppColors.lightTextPrimary),
           ),
-          child: Text(AppConstants.firstName),
+          child: const Text(AppConstants.firstName),
         ),
       ),
     );
