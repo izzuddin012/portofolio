@@ -204,69 +204,160 @@ class Project {
 }
 
 const List<Project> projects = [
+  // ── Allofresh consumer app ──────────────────────────────────────────────────
   Project(
-    title: 'Allofresh Ops App',
+    title: 'Allofresh',
     description:
-        'Flutter application supporting midmile and lastmile logistics operations — '
-        'covering tasking, packing, and delivery flows for warehouse and store users.',
-    techStack: ['Flutter', 'Dart', 'BLoC', 'Clean Architecture', 'REST API'],
-    contribution: [
-      'Core contributor building and iterating on the Flutter app from the ground up',
-      'Implemented store operation features: tasking, packing, and end-to-end delivery flows',
-      'Resolved duplicate API requests and state inconsistency bugs, improving overall stability',
-      'Enhanced logging, monitoring, and debugging infrastructure for faster production support',
-      'Improved workflow efficiency for warehouse and store users through targeted UX and performance work',
+        'Consumer-facing Flutter grocery app — built on a clean multi-module '
+        'architecture migrated from native, with a behavioral impression tracker '
+        'powering real-time UX insights.',
+    techStack: [
+      'Flutter',
+      'Dart',
+      'BLoC',
+      'Clean Architecture',
+      'Modularization',
+      'REST API',
     ],
+    contribution: [
+      'Led multi-module architecture design during migration from native to Flutter, '
+          'enabling independent parallel feature delivery across squads',
+      'Built a network wrapper module that standardized API communication, '
+          'response parsing, and error handling across all app modules',
+      'Designed and implemented an impression tracker — capturing which sections '
+          'users actually see, feeding behavioral data directly into product decisions',
+      'Managed the full release pipeline: internal testing, staged rollouts, '
+          'and App Store & Play Store submissions',
+    ],
+    // appStoreUrl: '',  // add when available
+    // playStoreUrl: '', // add when available
   ),
+
+  // ── PickPack (mid-mile warehouse ops) ───────────────────────────────────────
   Project(
-    title: 'Bukalapak iOS App',
+    title: 'PickPack by Allofresh',
     description:
-        'Large-scale marketplace iOS application serving millions of users. '
-        'Contributed to seller workflows, virtual products, and iOS Core Team modules.',
-    techStack: ['Swift', 'Objective-C', 'UIKit', 'MVVM', 'Firebase'],
-    contribution: [
-      'Developed and maintained multiple features across the large-scale marketplace iOS app',
-      'Enhanced seller-facing workflows including product listing, inventory, and order management',
-      'iOS Core Team member: maintained shared modules and upheld engineering standards across squads',
-      'Improved app performance and reduced crash rates through profiling, refactoring, and targeted fixes',
-      'Migrated legacy Objective-C codebases into Swift to improve maintainability',
+        'Flutter warehouse operations app — owned end-to-end, driving midmile '
+        'picking & packing workflows with hardware integrations for barcode '
+        'scanners and thermal printers.',
+    techStack: [
+      'Flutter',
+      'Dart',
+      'BLoC',
+      'CI/CD',
+      'Fastlane',
+      'GitHub Actions',
+      'Barcode Scanner',
+      'Thermal Printer',
     ],
-    appStoreUrl:
-        'https://apps.apple.com/id/app/bukalapak-jual-beli-online/id1003169137',
-    // App Store screenshots — portrait iPhone mockups (750×1334 retina)
+    contribution: [
+      'Sole owner of the app end-to-end — architecture, features, integrations, '
+          'and every production release decision',
+      'Drove three major Flutter SDK migrations (1.x → 2.x → 3.x), keeping '
+          'the app on stable, modern foundations with zero feature regressions',
+      'Integrated barcode scanners and thermal printers, equipping warehouse '
+          'staff with hardware-backed workflows that cut manual steps',
+      'Built CI/CD pipelines for automated unit testing and static analysis '
+          'on every pull request, maintaining code quality at scale',
+      'Resolved persistent data sync issues between packaging and inventory '
+          'services, improving fulfillment accuracy across warehouse operations',
+      'Managed internal test distribution and full Play Store submission lifecycle',
+    ],
+    // playStoreUrl: '', // add when available
+  ),
+
+  // ── Delivery Tracker (last-mile delivery) ───────────────────────────────────
+  Project(
+    title: 'Delivery Tracker by Allofresh',
+    description:
+        'Flutter last-mile delivery app used by field ops teams — featuring '
+        'multi-image proof-of-delivery capture and real-time order status tracking.',
+    techStack: [
+      'Flutter',
+      'Dart',
+      'BLoC',
+      'CI/CD',
+      'Fastlane',
+      'Camera API',
+      'GitHub Actions',
+    ],
+    contribution: [
+      'Drove Flutter SDK migrations from 1.x → 2.x → 3.x, maintaining stability '
+          'and feature parity through each major transition',
+      'Built a multi-image proof-of-delivery feature — allowing field staff to '
+          'capture, review, and submit multiple evidence photos per order',
+      'Implemented CI/CD pipelines for automated testing and code analysis, '
+          'reducing manual QA overhead before every release',
+      'Managed full release lifecycle from internal test builds through '
+          'production submission',
+    ],
+    // playStoreUrl: '', // add when available
+  ),
+
+  // ── Bukalapak iOS ───────────────────────────────────────────────────────────
+  Project(
+    title: 'Bukalapak',
+    description:
+        'iOS app for one of Indonesia\'s largest marketplaces — serving millions '
+        'of buyers and sellers. Contributed across buyer experience, virtual '
+        'products, and programmatic UI migration.',
+    techStack: [
+      'Swift',
+      'Objective-C',
+      'UIKit',
+      'Programmatic Autolayout',
+      'MVVM',
+      'Firebase',
+    ],
+    contribution: [
+      'Shipped "Nego Cincai" — a viral price-negotiation feature that became '
+          'one of Bukalapak\'s signature social commerce mechanics (2017)',
+      'Built virtual product purchase flows for mobile top-ups, flight tickets, '
+          'and train tickets, integrating multiple third-party provider APIs',
+      'Led migration from Storyboard/XIB to programmatic Autolayout, '
+          'significantly improving maintainability and layout flexibility at scale',
+      'Built generic reusable UITableView/UICollectionView components '
+          'adopted across multiple squads in the iOS codebase',
+      'Developed and iterated on seller features including product listing, '
+          'inventory management, and order fulfilment workflows',
+    ],
     images: [
       'https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/03/c0/52/03c0527e-37ed-a34b-6ed6-7d3fb17f99ce/iphone_6_7_8_Plus__U005b1242x2208_U005d_-_1_Cover.jpg/750x1334bb.jpg',
       'https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/50/05/4e/50054ea6-78fd-ef62-1f21-e00a99bf71fc/iphone_6_7_8_Plus__U005b1242x2208_U005d_-_2_VP.jpg/750x1334bb.jpg',
       'https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4a/67/b4/4a67b449-eb7f-6c49-4595-35c814e4cfaa/iphone_6_7_8_Plus__U005b1242x2208_U005d_-_3_BukaEmas.jpg/750x1334bb.jpg',
       'https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4d/23/7b/4d237bf6-16ce-b2c4-06dd-718911a1f964/iphone_6_7_8_Plus__U005b1242x2208_U005d_-_4_Prakerja.jpg/750x1334bb.jpg',
     ],
+    appStoreUrl:
+        'https://apps.apple.com/id/app/bukalapak-jual-beli-online/id1003169137',
   ),
+
+  // ── Kingkong Meats ──────────────────────────────────────────────────────────
   Project(
-    title: 'Virtual Products System',
+    title: 'Kingkong Meats',
     description:
-        'Built and maintained digital goods and mobile top-up features inside the '
-        'Bukalapak marketplace, handling high-volume transaction flows reliably.',
-    techStack: ['Swift', 'REST API', 'JWT', 'UIKit'],
-    contribution: [
-      'Designed and built the complete digital goods and mobile top-up purchase flow end-to-end',
-      'Integrated with multiple external provider APIs to enable reliable fulfillment across products',
-      'Implemented robust error handling and transaction state management for partial and failed orders',
-      'Ensured high availability of the virtual product catalog under peak traffic conditions',
+        'Flutter e-commerce app built from scratch for a specialty meat retailer '
+        '— covering product browsing, cart, and push notifications, '
+        'launched on both App Store and Play Store.',
+    techStack: [
+      'Flutter',
+      'Dart',
+      'Clean Architecture',
+      'Firebase',
+      'REST API',
     ],
-  ),
-  Project(
-    title: 'Flutter Core Module Library',
-    description:
-        'Shared module library maintained by the Flutter Core Team at Allofresh — '
-        'standardizing architecture patterns, logging, and debugging across all apps.',
-    techStack: ['Flutter', 'Dart', 'Clean Architecture', 'BLoC'],
     contribution: [
-      'Designed the shared module architecture adopted across all Allofresh Flutter applications',
-      'Established coding standards, architecture patterns, and documentation for the Core Team',
-      'Built reusable building blocks for API communication, error handling, and state management',
-      'Maintained backward compatibility and versioning as the library evolved across multiple teams',
+      'Contributed to app architecture design from day zero, establishing '
+          'scalable patterns for the team to build on',
+      'Built core commerce features: product listing with filters, '
+          'cart management, and push notification delivery',
+      'Prepared and launched the app on both App Store and Play Store, '
+          'handling all submission, compliance, and release requirements',
     ],
+    // appStoreUrl: '',  // add when available
+    // playStoreUrl: '', // add when available
   ),
+
+  // ── Developer Portfolio ─────────────────────────────────────────────────────
   Project(
     title: 'Developer Portfolio (This Site)',
     description:
@@ -282,20 +373,6 @@ const List<Project> projects = [
       'Built dark/light theme toggle, smooth scroll navigation, and section entrance animations',
       'Created a single-file content system (portfolio_content.dart) for easy future updates',
       'Set up GitHub Pages deployment with SPA routing via a custom 404.html redirect',
-    ],
-  ),
-  Project(
-    title: 'Push Notification Infrastructure',
-    description:
-        'System-level push notification integration with priority handling, '
-        'background delivery, and robust retry logic for high-frequency operational apps.',
-    techStack: ['Flutter', 'Firebase FCM', 'Background Services', 'Docker'],
-    category: ProjectCategory.backend,
-    contribution: [
-      'Integrated Flutter\'s push notification stack with Firebase Cloud Messaging (FCM) end-to-end',
-      'Implemented background notification handling and foreground message processing',
-      'Built notification-driven deep linking for critical operational alerts and workflow triggers',
-      'Added delivery confirmation and retry logic for high-frequency, high-reliability use cases',
     ],
   ),
 ];
