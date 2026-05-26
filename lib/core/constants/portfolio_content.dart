@@ -165,6 +165,10 @@ class Project {
   final ProjectCategory category;
   final String? githubUrl;
   final String? demoUrl;
+  /// Apple App Store listing URL (optional).
+  final String? appStoreUrl;
+  /// Google Play Store listing URL (optional).
+  final String? playStoreUrl;
 
   const Project({
     required this.title,
@@ -175,6 +179,8 @@ class Project {
     this.category = ProjectCategory.mobile,
     this.githubUrl,
     this.demoUrl,
+    this.appStoreUrl,
+    this.playStoreUrl,
   });
 }
 
