@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:devolio_flutter/core/constants/breakpoints.dart';
 import 'package:devolio_flutter/core/utils/responsive.dart';
 
 class AppContainer extends StatelessWidget {
   final Widget child;
+  final EdgeInsetsGeometry? padding;
 
-  const AppContainer({super.key, required this.child});
+  const AppContainer({super.key, required this.child, this.padding});
 
   @override
   Widget build(BuildContext context) {
-    double maxWidth = double.infinity;
-
-    if (Responsive.isDesktop(context)) {
-      maxWidth = 1100;
-    } else if (Responsive.isTablet(context)) {
-      maxWidth = 800;
-    }
-
+    final isDesktop = Responsive.isDesktop(context);
     return Center(
       child: Container(
-        constraints: BoxConstraints(maxWidth: maxWidth),
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+        constraints: const BoxConstraints(maxWidth: Breakpoints.maxContentWidth),
+        padding: padding ??
+            EdgeInsets.symmetric(
+              horizontal: isDesktop ? 48 : 24,
+              vertical: 96,
+            ),
         child: child,
       ),
     );
