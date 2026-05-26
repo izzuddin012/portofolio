@@ -29,7 +29,7 @@ class AppConstants {
 
   // Direct link to your CV / résumé PDF
   static const String cvUrl =
-      'https://your-cv-link.com/cv.pdf'; // TODO: replace
+      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/cv/Resume%20-%20Muhammad%20Izzuddin.pdf';
 
   // Social / contact links
   static const String githubUrl = 'https://github.com/izzuddin012';
