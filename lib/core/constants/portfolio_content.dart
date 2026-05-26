@@ -14,57 +14,61 @@
 // ── 1. Personal info & links ──────────────────────────────────────────────────
 
 class AppConstants {
-  // TODO: your name
   static const String name       = 'Muhammad Izzuddin';
   static const String shortName  = 'Izzuddin';
-  static const String firstName  = 'Muhammad Izzuddin';
 
-  // TODO: your headline
+  // Used in hero heading (80 pt) and navbar logo
+  static const String firstName  = 'Izzuddin';
+
+  // Headline shown under the name
   static const String heroRole    = 'Senior Mobile Apps Engineer';
   static const String heroTagline =
-      'Crafting exceptional mobile experiences\nwith clean, maintainable code.';
+      '10+ years building high-performance mobile apps\n'
+      'for iOS & Flutter — from large-scale e-commerce\n'
+      'to real-time logistics systems.';
 
-  // TODO: direct link to your CV / résumé PDF
-  static const String cvUrl = 'https://your-cv-link.com/cv.pdf';
+  // Direct link to your CV / résumé PDF
+  static const String cvUrl = 'https://your-cv-link.com/cv.pdf'; // TODO: replace
 
-  // TODO: social / contact links
+  // Social / contact links
   static const String githubUrl   = 'https://github.com/izzuddin012';
   static const String linkedinUrl = 'https://linkedin.com/in/izzuddin012';
   static const String email       = 'izzuddin.m012@gmail.com';
 
-  // TODO: location & availability
+  // Location & availability
   static const String location           = 'Indonesia 🇮🇩';
   static const String availabilityStatus = 'Open to opportunities';
 
   // ── 2. Hero stats ──────────────────────────────────────────────────────────
 
-  // TODO: update your numbers
-  static const String statYears        = '5+';
-  static const String statYearsLabel   = 'Years Exp.';
-  static const String statProjects     = '20+';
-  static const String statProjectsLabel = 'Projects Shipped';
-  static const String statDownloads    = '100K+';
-  static const String statDownloadsLabel = 'App Downloads';
-  static const String statRating       = '4.9★';
-  static const String statRatingLabel  = 'Client Rating';
+  static const String statYears         = '10+';
+  static const String statYearsLabel    = 'Years Exp.';
+  static const String statProjects      = 'M+';
+  static const String statProjectsLabel = 'Users Reached';
+  static const String statDownloads     = '2';
+  static const String statDownloadsLabel = 'Core Teams';
+  static const String statRating        = '3.81';
+  static const String statRatingLabel   = 'GPA / 4.0';
 
   // ── 3. About / bio ─────────────────────────────────────────────────────────
 
-  // TODO: write your own bio paragraphs
   static const String aboutBio1 =
-      'I\'m a Senior Mobile Engineer with 5+ years of experience building '
-      'scalable iOS and Flutter applications. I focus on clean architecture, '
-      'performance optimization, and shipping products people actually love using.';
+      'I\'m a Senior Mobile Apps Engineer with over 10 years of experience '
+      'building high-performance mobile applications across iOS and Flutter. '
+      'My work spans large-scale e-commerce platforms serving millions of users '
+      'to real-time operational tools for logistics and supply chain.';
 
   static const String aboutBio2 =
-      'Over the years I\'ve led feature delivery, reduced crash rates by 40%, '
-      'built CI/CD pipelines, and mentored engineers across cross-functional teams. '
-      'I care deeply about code quality, design fidelity, and engineering craft.';
+      'I specialize in clean architecture, performance optimization, and '
+      'system-level thinking — taking ownership of both feature delivery and '
+      'engineering standards. I\'ve served on Flutter and iOS Core Teams, '
+      'defining shared patterns and driving reliability improvements across the stack.';
 
-  // TODO: your personal engineering philosophy / quote
+  // Engineering philosophy / blockquote
   static const String aboutApproach =
-      '"Clean architecture first. Test what matters. '
-      'Optimize for the real user, not the benchmark."';
+      '"Scalable systems, performance optimization, operational excellence — '
+      'not just buzzwords, but the lens through which every architectural '
+      'decision gets made."';
 
   // ── 4. UI labels ───────────────────────────────────────────────────────────
 
@@ -84,11 +88,11 @@ class AppConstants {
   static const String contactHeading    = 'Get In Touch';
 
   // CTA labels
-  static const String ctaViewWork     = 'VIEW WORK';
-  static const String ctaGithub       = 'GITHUB';
-  static const String ctaDownloadCv   = 'DOWNLOAD CV';
-  static const String ctaContact      = 'CONTACT';
-  static const String ctaSendMessage  = 'SEND MESSAGE';
+  static const String ctaViewWork    = 'VIEW WORK';
+  static const String ctaGithub      = 'GITHUB';
+  static const String ctaDownloadCv  = 'DOWNLOAD CV';
+  static const String ctaContact     = 'CONTACT';
+  static const String ctaSendMessage = 'SEND MESSAGE';
 
   // Contact form
   static const String contactSubtitle =
@@ -111,36 +115,36 @@ const kTechStack = <(String, List<String>)>[
   (
     'Mobile Development',
     [
-      'Flutter', 'Dart', 'Swift', 'SwiftUI', 'Objective-C',
-      'UIKit', 'Xcode', 'Android Studio',
+      'Flutter', 'Dart', 'Swift', 'Objective-C',
+      'SwiftUI', 'UIKit', 'Xcode', 'Android Studio',
     ],
   ),
   (
-    'State & Architecture',
+    'Architecture',
     [
-      'Bloc / Cubit', 'Riverpod', 'Provider', 'GetX',
-      'Clean Architecture', 'MVVM', 'Repository Pattern',
+      'Clean Architecture', 'MVVM', 'BLoC / Cubit',
+      'Riverpod', 'Repository Pattern', 'Modularization',
     ],
   ),
   (
-    'Backend & Cloud',
+    'Backend & APIs',
     [
-      'Firebase', 'Supabase', 'REST API', 'GraphQL',
-      'Node.js', 'MySQL', 'PostgreSQL', 'Redis',
+      'REST APIs', 'Laravel', 'JWT', 'Firebase',
+      'MySQL', 'Docker',
     ],
   ),
   (
-    'Tools & Platforms',
+    'Tools & DevOps',
     [
-      'Git', 'GitHub Actions', 'Fastlane', 'TestFlight',
-      'Google Play Console', 'Figma', 'Postman', 'Docker',
+      'Git', 'GitHub Actions', 'CI/CD', 'Fastlane',
+      'TestFlight', 'Google Play Console', 'Postman',
     ],
   ),
   (
-    'Testing',
+    'Systems',
     [
-      'Unit Testing', 'Widget Testing', 'Integration Tests',
-      'Mockito', 'Flutter Test', 'Detox',
+      'Push Notifications', 'Background Services',
+      'QR / Barcode', 'Offline Support', 'Deep Linking',
     ],
   ),
 ];
@@ -153,6 +157,11 @@ class Project {
   final String title;
   final String description;
   final List<String> techStack;
+  final List<String> contribution;
+  /// Screenshot / mockup URLs shown in the detail modal gallery.
+  /// Supports https:// network images or assets/ paths.
+  /// Leave empty to show the default tint-icon placeholder.
+  final List<String> images;
   final ProjectCategory category;
   final String? githubUrl;
   final String? demoUrl;
@@ -161,68 +170,99 @@ class Project {
     required this.title,
     required this.description,
     required this.techStack,
+    required this.contribution,
+    this.images = const [],
     this.category = ProjectCategory.mobile,
     this.githubUrl,
     this.demoUrl,
   });
 }
 
-// TODO: replace with your real projects
 const List<Project> projects = [
   Project(
-    title: 'Flutter E-Commerce App',
+    title: 'Allofresh Ops App',
     description:
-        'Scalable e-commerce platform with optimised state management, '
-        'offline cart persistence, and 30 % faster checkout flow.',
-    techStack: ['Flutter', 'Bloc', 'REST API', 'SQLite'],
-    category: ProjectCategory.mobile,
-    githubUrl: 'https://github.com/yourusername/ecommerce-app',
+        'Flutter application supporting midmile and lastmile logistics operations — '
+        'covering tasking, packing, and delivery flows for warehouse and store users.',
+    techStack: ['Flutter', 'Dart', 'BLoC', 'Clean Architecture', 'REST API'],
+    contribution: [
+      'Core contributor building and iterating on the Flutter app from the ground up',
+      'Implemented store operation features: tasking, packing, and end-to-end delivery flows',
+      'Resolved duplicate API requests and state inconsistency bugs, improving overall stability',
+      'Enhanced logging, monitoring, and debugging infrastructure for faster production support',
+      'Improved workflow efficiency for warehouse and store users through targeted UX and performance work',
+    ],
   ),
   Project(
-    title: 'iOS Logistics Tracker',
+    title: 'Bukalapak iOS App',
     description:
-        'Real-time logistics tracking for last-mile delivery. '
-        'Reduced delivery errors by 25 % through better state tracking.',
-    techStack: ['Swift', 'Objective-C', 'Firebase', 'MapKit'],
-    category: ProjectCategory.mobile,
-    githubUrl: 'https://github.com/yourusername/logistics-tracker',
+        'Large-scale marketplace iOS application serving millions of users. '
+        'Contributed to seller workflows, virtual products, and iOS Core Team modules.',
+    techStack: ['Swift', 'Objective-C', 'UIKit', 'MVVM', 'Firebase'],
+    contribution: [
+      'Developed and maintained multiple features across the large-scale marketplace iOS app',
+      'Enhanced seller-facing workflows including product listing, inventory, and order management',
+      'iOS Core Team member: maintained shared modules and upheld engineering standards across squads',
+      'Improved app performance and reduced crash rates through profiling, refactoring, and targeted fixes',
+      'Migrated legacy Objective-C codebases into Swift to improve maintainability',
+    ],
+  ),
+  Project(
+    title: 'Virtual Products System',
+    description:
+        'Built and maintained digital goods and mobile top-up features inside the '
+        'Bukalapak marketplace, handling high-volume transaction flows reliably.',
+    techStack: ['Swift', 'REST API', 'JWT', 'UIKit'],
+    contribution: [
+      'Designed and built the complete digital goods and mobile top-up purchase flow end-to-end',
+      'Integrated with multiple external provider APIs to enable reliable fulfillment across products',
+      'Implemented robust error handling and transaction state management for partial and failed orders',
+      'Ensured high availability of the virtual product catalog under peak traffic conditions',
+    ],
+  ),
+  Project(
+    title: 'Flutter Core Module Library',
+    description:
+        'Shared module library maintained by the Flutter Core Team at Allofresh — '
+        'standardizing architecture patterns, logging, and debugging across all apps.',
+    techStack: ['Flutter', 'Dart', 'Clean Architecture', 'BLoC'],
+    contribution: [
+      'Designed the shared module architecture adopted across all Allofresh Flutter applications',
+      'Established coding standards, architecture patterns, and documentation for the Core Team',
+      'Built reusable building blocks for API communication, error handling, and state management',
+      'Maintained backward compatibility and versioning as the library evolved across multiple teams',
+    ],
   ),
   Project(
     title: 'Developer Portfolio (This Site)',
     description:
         'This portfolio — built entirely in Flutter Web with clean architecture, '
         'Riverpod state management, and GitHub Pages deployment.',
-    techStack: ['Flutter Web', 'Riverpod', 'go_router', 'flutter_animate'],
+    techStack: ['Flutter Web', 'Riverpod', 'flutter_animate', 'GitHub Pages'],
     category: ProjectCategory.web,
-    githubUrl: 'https://github.com/yourusername/devolio_flutter',
-    demoUrl: 'https://yourusername.github.io/devolio_flutter',
+    githubUrl: 'https://github.com/izzuddin012/devolio_flutter',
+    demoUrl: 'https://izzuddin012.github.io/devolio_flutter',
+    contribution: [
+      'Designed and built the full portfolio UI from scratch in Flutter Web',
+      'Implemented responsive layouts for desktop, tablet, and mobile viewports',
+      'Built dark/light theme toggle, smooth scroll navigation, and section entrance animations',
+      'Created a single-file content system (portfolio_content.dart) for easy future updates',
+      'Set up GitHub Pages deployment with SPA routing via a custom 404.html redirect',
+    ],
   ),
   Project(
-    title: 'Internal Ops Dashboard',
+    title: 'Push Notification Infrastructure',
     description:
-        'Internal tooling to streamline warehouse workflows, reducing '
-        'manual processing time by 60 % and improving team efficiency.',
-    techStack: ['Flutter', 'Laravel API', 'MySQL', 'REST API'],
-    category: ProjectCategory.web,
-    githubUrl: 'https://github.com/yourusername/ops-dashboard',
-  ),
-  Project(
-    title: 'Push Notification Service',
-    description:
-        'Microservice handling 500 K+ daily push notifications with '
-        'priority queuing, retry logic, and delivery analytics.',
-    techStack: ['Dart', 'Firebase FCM', 'Redis', 'Docker'],
+        'System-level push notification integration with priority handling, '
+        'background delivery, and robust retry logic for high-frequency operational apps.',
+    techStack: ['Flutter', 'Firebase FCM', 'Background Services', 'Docker'],
     category: ProjectCategory.backend,
-    githubUrl: 'https://github.com/yourusername/push-service',
-  ),
-  Project(
-    title: 'Flutter UI Component Library',
-    description:
-        'Shared design system used across 3 products. '
-        'Includes theming, accessibility, and Storybook-style demos.',
-    techStack: ['Flutter', 'Dart', 'Pub.dev'],
-    category: ProjectCategory.mobile,
-    githubUrl: 'https://github.com/yourusername/flutter-ui-kit',
+    contribution: [
+      'Integrated Flutter\'s push notification stack with Firebase Cloud Messaging (FCM) end-to-end',
+      'Implemented background notification handling and foreground message processing',
+      'Built notification-driven deep linking for critical operational alerts and workflow triggers',
+      'Added delivery confirmation and retry logic for high-frequency, high-reliability use cases',
+    ],
   ),
 ];
 
@@ -244,41 +284,33 @@ class Experience {
   });
 }
 
-// TODO: replace with your real work history (most recent first)
 const List<Experience> experiences = [
   Experience(
-    company: 'Acme Tech',
-    role: 'Senior Mobile Engineer',
-    dateRange: 'Jan 2022 – Present',
-    location: 'Remote',
+    company: 'Allofresh',
+    role: 'Senior Mobile Apps Engineer (Flutter)',
+    dateRange: '2022 – 2026',
+    location: 'Indonesia 🇮🇩',
     achievements: [
-      'Led Flutter migration from iOS-only app, reducing development cost by 40 %',
-      'Architected offline-first data sync layer handling 200 K+ daily active users',
-      'Reduced app startup time by 35 % through lazy loading and AOT optimisations',
-      'Mentored 3 junior engineers, established code-review culture and PR templates',
+      'Core contributor to Flutter applications supporting midmile and lastmile logistics operations',
+      'Member of Flutter Core Team — defined architecture standards and built shared modules across all apps',
+      'Built scalable features for store operations: tasking, packing, and delivery flows',
+      'Resolved duplicate API requests and state inconsistency issues, improving app stability',
+      'Enhanced logging, monitoring, and debugging capabilities for high-frequency operational usage',
+      'Improved workflow efficiency for warehouse and store users through targeted UX and performance work',
     ],
   ),
   Experience(
-    company: 'Startup Labs',
-    role: 'Mobile Engineer',
-    dateRange: 'Mar 2020 – Dec 2021',
-    location: 'Kuala Lumpur, MY',
+    company: 'Bukalapak',
+    role: 'Senior Mobile Apps Engineer (iOS Native, Flutter)',
+    dateRange: '2016 – 2022',
+    location: 'Indonesia 🇮🇩',
     achievements: [
-      'Built core iOS app features in Swift / Objective-C serving 50 K+ users',
-      'Integrated Firebase Analytics and Crashlytics, reducing crash rate by 40 %',
-      'Delivered CI/CD pipeline with Fastlane and Bitrise, cutting release time by 60 %',
-      'Collaborated with design team to implement pixel-perfect UI from Figma specs',
-    ],
-  ),
-  Experience(
-    company: 'Freelance',
-    role: 'Flutter & iOS Developer',
-    dateRange: 'Jun 2018 – Feb 2020',
-    location: 'Remote',
-    achievements: [
-      'Delivered 8+ mobile apps for clients across logistics, retail, and fintech',
-      'Maintained long-term client relationships with 4.9 / 5 average satisfaction',
-      'Built REST API integrations with robust error handling and offline support',
+      'Developed large-scale iOS applications serving millions of users on one of Indonesia\'s largest marketplaces',
+      'Member of iOS Core Team — maintained shared modules and upheld engineering standards across teams',
+      'Enhanced seller experience including product listing, order management, and fulfillment workflows',
+      'Built and maintained virtual product systems for digital goods and mobile top-ups',
+      'Migrated legacy Objective-C codebases to Swift, improving maintainability and performance',
+      'Improved app performance and reduced crash rates through targeted profiling and refactoring',
     ],
   ),
 ];

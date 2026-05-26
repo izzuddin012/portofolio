@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'app_colors.dart';
+import 'package:devolio_flutter/core/theme/app_colors.dart';
 
 class AppTheme {
   static TextTheme _text(TextTheme base, Color body) =>
@@ -42,7 +42,7 @@ class AppTheme {
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
           foregroundColor: AppColors.textPrimary,
-          side: const BorderSide(color: AppColors.border, width: 1),
+          side: const BorderSide(color: AppColors.border),
           elevation: 0,
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
@@ -60,7 +60,6 @@ class AppTheme {
       colorScheme: const ColorScheme.light(
         primary: AppColors.accent,
         secondary: AppColors.warm,
-        surface: AppColors.lightSurface,
         onSurface: AppColors.lightTextPrimary,
         outline: AppColors.lightBorder,
       ),
@@ -86,7 +85,7 @@ class AppTheme {
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
           foregroundColor: AppColors.lightTextPrimary,
-          side: const BorderSide(color: AppColors.lightBorder, width: 1),
+          side: const BorderSide(color: AppColors.lightBorder),
           elevation: 0,
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),

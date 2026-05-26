@@ -54,26 +54,34 @@ class _DesktopLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final divider = isDark ? AppColors.border : AppColors.lightBorder;
-    return IntrinsicHeight(
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          // Left — bio / quote / facts  (40 %)
-          Expanded(flex: 6, child: _AboutContent(isDark: isDark)),
-          // Divider
-          Container(
-            width: 1,
-            margin: const EdgeInsets.symmetric(horizontal: 52),
-            color: divider,
+    final dividerColor = isDark ? AppColors.border : AppColors.lightBorder;
+    // IntrinsicHeight is incompatible with flutter_animate compositing layers,
+    // so the divider is drawn as a right-border on the left column's container.
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Left — bio / quote / facts
+        Expanded(
+          flex: 6,
+          child: Container(
+            padding: const EdgeInsets.only(right: 52),
+            decoration: BoxDecoration(
+              border: Border(
+                right: BorderSide(color: dividerColor),
+              ),
+            ),
+            child: _AboutContent(isDark: isDark),
           ),
-          // Right — tech stack  (56 %)
-          Expanded(
-            flex: 3,
+        ),
+        // Right — tech stack
+        Expanded(
+          flex: 3,
+          child: Padding(
+            padding: const EdgeInsets.only(left: 52),
             child: _SkillsContent(isDark: isDark, anchorKey: skillsKey),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
