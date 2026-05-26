@@ -204,13 +204,49 @@ class Project {
 }
 
 const List<Project> projects = [
+  // ── Bukalapak iOS ───────────────────────────────────────────────────────────
+  Project(
+    title: 'Bukalapak',
+    description:
+        'iOS app for one of Indonesia\'s largest marketplaces — serving millions '
+        'of buyers and sellers.',
+    techStack: [
+      'Swift',
+      'Objective-C',
+      'UIKit',
+      'Programmatic Autolayout',
+      'MVVM',
+      'Firebase',
+    ],
+    contribution: [
+      'Shipped "Nego Cincai" — a viral price-negotiation feature that became '
+          'one of Bukalapak\'s signature social commerce mechanics (2017)',
+      'Built virtual product purchase flows for mobile top-ups, flight tickets, '
+          'and train tickets, integrating multiple third-party provider APIs',
+      'Led migration from Storyboard/XIB to programmatic Autolayout, '
+          'significantly improving maintainability and layout flexibility at scale',
+      'Built generic reusable UITableView/UICollectionView components '
+          'adopted across multiple squads in the iOS codebase',
+      'Developed and iterated on seller features including product listing, '
+          'inventory management, and order fulfilment workflows',
+    ],
+    images: [
+      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Bukalapak/bukalapak_0.png',
+      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Bukalapak/bukalapak_1.png',
+      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Bukalapak/bukalapak_2.png',
+      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Bukalapak/bukalapak_3.png',
+      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Bukalapak/bukalapak_4.png',
+    ],
+    appStoreUrl:
+        'https://apps.apple.com/id/app/bukalapak-jual-beli-online/id1003169137',
+  ),
+
   // ── Allofresh consumer app ──────────────────────────────────────────────────
   Project(
     title: 'Allofresh',
     description:
         'Consumer-facing Flutter grocery app — built on a clean multi-module '
-        'architecture migrated from native, with a behavioral impression tracker '
-        'powering real-time UX insights.',
+        'architecture migrated from native',
     techStack: [
       'Flutter',
       'Dart',
@@ -229,8 +265,18 @@ const List<Project> projects = [
       'Managed the full release pipeline: internal testing, staged rollouts, '
           'and App Store & Play Store submissions',
     ],
-    // appStoreUrl: '',  // add when available
-    // playStoreUrl: '', // add when available
+    images: [
+      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Allofresh/allofresh_0.png',
+      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Allofresh/allofresh_1.jpg',
+      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Allofresh/allofresh_2.jpg',
+      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Allofresh/allofresh_3.jpg',
+      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Allofresh/allofresh_4.jpg',
+      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Allofresh/allofresh_5.jpg',
+    ],
+    appStoreUrl:
+        'https://apps.apple.com/id/app/allofresh-grocery-shopping/id1610121515',
+    playStoreUrl:
+        'https://play.google.com/store/apps/details?id=id.allofresh.ecommerce&hl=en',
   ),
 
   // ── PickPack (mid-mile warehouse ops) ───────────────────────────────────────
@@ -263,72 +309,14 @@ const List<Project> projects = [
           'services, improving fulfillment accuracy across warehouse operations',
       'Managed internal test distribution and full Play Store submission lifecycle',
     ],
-    // playStoreUrl: '', // add when available
-  ),
-
-  // ── Delivery Tracker (last-mile delivery) ───────────────────────────────────
-  Project(
-    title: 'Delivery Tracker by Allofresh',
-    description:
-        'Flutter last-mile delivery app used by field ops teams — featuring '
-        'multi-image proof-of-delivery capture and real-time order status tracking.',
-    techStack: [
-      'Flutter',
-      'Dart',
-      'BLoC',
-      'CI/CD',
-      'Fastlane',
-      'Camera API',
-      'GitHub Actions',
-    ],
-    contribution: [
-      'Drove Flutter SDK migrations from 1.x → 2.x → 3.x, maintaining stability '
-          'and feature parity through each major transition',
-      'Built a multi-image proof-of-delivery feature — allowing field staff to '
-          'capture, review, and submit multiple evidence photos per order',
-      'Implemented CI/CD pipelines for automated testing and code analysis, '
-          'reducing manual QA overhead before every release',
-      'Managed full release lifecycle from internal test builds through '
-          'production submission',
-    ],
-    // playStoreUrl: '', // add when available
-  ),
-
-  // ── Bukalapak iOS ───────────────────────────────────────────────────────────
-  Project(
-    title: 'Bukalapak',
-    description:
-        'iOS app for one of Indonesia\'s largest marketplaces — serving millions '
-        'of buyers and sellers. Contributed across buyer experience, virtual '
-        'products, and programmatic UI migration.',
-    techStack: [
-      'Swift',
-      'Objective-C',
-      'UIKit',
-      'Programmatic Autolayout',
-      'MVVM',
-      'Firebase',
-    ],
-    contribution: [
-      'Shipped "Nego Cincai" — a viral price-negotiation feature that became '
-          'one of Bukalapak\'s signature social commerce mechanics (2017)',
-      'Built virtual product purchase flows for mobile top-ups, flight tickets, '
-          'and train tickets, integrating multiple third-party provider APIs',
-      'Led migration from Storyboard/XIB to programmatic Autolayout, '
-          'significantly improving maintainability and layout flexibility at scale',
-      'Built generic reusable UITableView/UICollectionView components '
-          'adopted across multiple squads in the iOS codebase',
-      'Developed and iterated on seller features including product listing, '
-          'inventory management, and order fulfilment workflows',
-    ],
     images: [
-      'https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/03/c0/52/03c0527e-37ed-a34b-6ed6-7d3fb17f99ce/iphone_6_7_8_Plus__U005b1242x2208_U005d_-_1_Cover.jpg/750x1334bb.jpg',
-      'https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/50/05/4e/50054ea6-78fd-ef62-1f21-e00a99bf71fc/iphone_6_7_8_Plus__U005b1242x2208_U005d_-_2_VP.jpg/750x1334bb.jpg',
-      'https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4a/67/b4/4a67b449-eb7f-6c49-4595-35c814e4cfaa/iphone_6_7_8_Plus__U005b1242x2208_U005d_-_3_BukaEmas.jpg/750x1334bb.jpg',
-      'https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4d/23/7b/4d237bf6-16ce-b2c4-06dd-718911a1f964/iphone_6_7_8_Plus__U005b1242x2208_U005d_-_4_Prakerja.jpg/750x1334bb.jpg',
+      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/pickpack/pickpack_0.png',
+      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/pickpack/pickpack_1.png',
+      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/pickpack/pickpack_2.png',
+      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/pickpack/pickpack_3.png',
+      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/pickpack/pickpack_4.png',
     ],
-    appStoreUrl:
-        'https://apps.apple.com/id/app/bukalapak-jual-beli-online/id1003169137',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=id.allofresh.pickpack&hl=id', 
   ),
 
   // ── Kingkong Meats ──────────────────────────────────────────────────────────
@@ -353,8 +341,11 @@ const List<Project> projects = [
       'Prepared and launched the app on both App Store and Play Store, '
           'handling all submission, compliance, and release requirements',
     ],
-    // appStoreUrl: '',  // add when available
-    // playStoreUrl: '', // add when available
+    images: [
+      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Kingkong%20Meats/kingkong_0.png',
+      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Kingkong%20Meats/kingkong_1.png',
+      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Kingkong%20Meats/kingkong_2.png',
+    ],
   ),
 
   // ── Developer Portfolio ─────────────────────────────────────────────────────
@@ -365,8 +356,6 @@ const List<Project> projects = [
         'Riverpod state management, and GitHub Pages deployment.',
     techStack: ['Flutter Web', 'Riverpod', 'flutter_animate', 'GitHub Pages'],
     category: ProjectCategory.web,
-    githubUrl: 'https://github.com/izzuddin012/devolio_flutter',
-    demoUrl: 'https://izzuddin012.github.io/devolio_flutter',
     contribution: [
       'Designed and built the full portfolio UI from scratch in Flutter Web',
       'Implemented responsive layouts for desktop, tablet, and mobile viewports',
