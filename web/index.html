@@ -3,6 +3,10 @@
 <head>
   <base href="$FLUTTER_BASE_HREF">
 
+  <!-- Preload critical resources -->
+  <link rel="preload" href="flutter_bootstrap.js" as="script">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,9 +52,70 @@
       margin: 0;
       background-color: #0A0A0A;
     }
+
+    /* ── Loading splash ───────────────────────────────────────────── */
+    #loading {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #0A0A0A;
+      transition: opacity 0.4s ease;
+      z-index: 9999;
+    }
+    #loading.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .loading-name {
+      color: #E8E8E8;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+    }
+    .loading-bar {
+      width: 120px;
+      height: 2px;
+      background: #1E1E1E;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .loading-bar::after {
+      content: '';
+      display: block;
+      width: 40%;
+      height: 100%;
+      background: #4DB8FF;
+      border-radius: 2px;
+      animation: slide 1.2s ease-in-out infinite;
+    }
+    @keyframes slide {
+      0%   { transform: translateX(-100%); }
+      100% { transform: translateX(350%); }
+    }
   </style>
 </head>
 <body>
+  <!-- Loading splash — visible immediately, dismissed on flutter-first-frame -->
+  <div id="loading">
+    <div class="loading-name">Izzuddin</div>
+    <div class="loading-bar"></div>
+  </div>
+
   <script src="flutter_bootstrap.js" async></script>
+
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      var el = document.getElementById('loading');
+      if (el) {
+        el.classList.add('hidden');
+        setTimeout(function () { el.remove(); }, 400);
+      }
+    });
+  </script>
 </body>
 </html>

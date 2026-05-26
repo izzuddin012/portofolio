@@ -37,7 +37,7 @@ class AppConstants {
   static const String email = 'izzuddin.m012@gmail.com';
 
   // Location & availability
-  static const String location = 'Indonesia 🇮🇩';
+  static const String location = 'Indonesia';
   static const String availabilityStatus = 'Open to opportunities';
 
   // ── 2. Hero stats ──────────────────────────────────────────────────────────
@@ -389,7 +389,7 @@ const List<Experience> experiences = [
     company: 'Allofresh',
     role: 'Senior Mobile Apps Engineer (Flutter)',
     dateRange: '2022 – 2026',
-    location: 'Indonesia 🇮🇩',
+    location: 'Indonesia',
     achievements: [
       'Core contributor to Flutter applications supporting midmile and lastmile logistics operations',
       'Member of Flutter Core Team — defined architecture standards and built shared modules across all apps',
@@ -403,7 +403,7 @@ const List<Experience> experiences = [
     company: 'Bukalapak',
     role: 'Senior Mobile Apps Engineer (iOS Native, Flutter)',
     dateRange: '2016 – 2022',
-    location: 'Indonesia 🇮🇩',
+    location: 'Indonesia',
     achievements: [
       'Developed large-scale iOS applications serving millions of users on one of Indonesia\'s largest marketplaces',
       'Member of iOS Core Team — maintained shared modules and upheld engineering standards across teams',
