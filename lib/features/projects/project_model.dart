@@ -1,13 +1,3 @@
-class Project {
-  final String title;
-  final String description;
-  final List<String> techStack;
-  final String? link;
-
-  const Project({
-    required this.title,
-    required this.description,
-    required this.techStack,
-    this.link,
-  });
-}
+// Project model & category enum live in portfolio_content.dart.
+export 'package:devolio_flutter/core/constants/portfolio_content.dart'
+    show Project, ProjectCategory;
