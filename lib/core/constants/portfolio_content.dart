@@ -14,41 +14,42 @@
 // ── 1. Personal info & links ──────────────────────────────────────────────────
 
 class AppConstants {
-  static const String name       = 'Muhammad Izzuddin';
-  static const String shortName  = 'Izzuddin';
+  static const String name = 'Muhammad Izzuddin';
+  static const String shortName = 'Izzuddin';
 
   // Used in hero heading (80 pt) and navbar logo
-  static const String firstName  = 'Izzuddin';
+  static const String firstName = 'Izzuddin';
 
   // Headline shown under the name
-  static const String heroRole    = 'Senior Mobile Apps Engineer';
+  static const String heroRole = 'Senior Mobile Apps Engineer';
   static const String heroTagline =
       '10+ years building high-performance mobile apps\n'
       'for iOS & Flutter — from large-scale e-commerce\n'
       'to real-time logistics systems.';
 
   // Direct link to your CV / résumé PDF
-  static const String cvUrl = 'https://your-cv-link.com/cv.pdf'; // TODO: replace
+  static const String cvUrl =
+      'https://your-cv-link.com/cv.pdf'; // TODO: replace
 
   // Social / contact links
-  static const String githubUrl   = 'https://github.com/izzuddin012';
+  static const String githubUrl = 'https://github.com/izzuddin012';
   static const String linkedinUrl = 'https://linkedin.com/in/izzuddin012';
-  static const String email       = 'izzuddin.m012@gmail.com';
+  static const String email = 'izzuddin.m012@gmail.com';
 
   // Location & availability
-  static const String location           = 'Indonesia 🇮🇩';
+  static const String location = 'Indonesia 🇮🇩';
   static const String availabilityStatus = 'Open to opportunities';
 
   // ── 2. Hero stats ──────────────────────────────────────────────────────────
 
-  static const String statYears         = '10+';
-  static const String statYearsLabel    = 'Years Exp.';
-  static const String statProjects      = 'M+';
+  static const String statYears = '10+';
+  static const String statYearsLabel = 'Years Exp.';
+  static const String statProjects = 'M+';
   static const String statProjectsLabel = 'Users Reached';
-  static const String statDownloads     = '2';
+  static const String statDownloads = '2';
   static const String statDownloadsLabel = 'Core Teams';
-  static const String statRating        = '3.81';
-  static const String statRatingLabel   = 'GPA / 4.0';
+  static const String statRating = '3.81';
+  static const String statRatingLabel = 'GPA / 4.0';
 
   // ── 3. About / bio ─────────────────────────────────────────────────────────
 
@@ -73,33 +74,33 @@ class AppConstants {
   // ── 4. UI labels ───────────────────────────────────────────────────────────
 
   // Nav
-  static const String navHome       = 'Home';
-  static const String navAbout      = 'About';
-  static const String navSkills     = 'Skills';
-  static const String navProjects   = 'Projects';
+  static const String navHome = 'Home';
+  static const String navAbout = 'About';
+  static const String navSkills = 'Skills';
+  static const String navProjects = 'Projects';
   static const String navExperience = 'Experience';
-  static const String navContact    = 'Contact';
+  static const String navContact = 'Contact';
 
   // Section headings
-  static const String aboutHeading      = 'About Me';
-  static const String skillsHeading     = 'Technical Stack';
-  static const String projectsHeading   = 'Featured Projects';
+  static const String aboutHeading = 'About Me';
+  static const String skillsHeading = 'Technical Stack';
+  static const String projectsHeading = 'Featured Projects';
   static const String experienceHeading = 'Career';
-  static const String contactHeading    = 'Get In Touch';
+  static const String contactHeading = 'Get In Touch';
 
   // CTA labels
-  static const String ctaViewWork    = 'VIEW WORK';
-  static const String ctaGithub      = 'GITHUB';
-  static const String ctaDownloadCv  = 'DOWNLOAD CV';
-  static const String ctaContact     = 'CONTACT';
+  static const String ctaViewWork = 'VIEW WORK';
+  static const String ctaGithub = 'GITHUB';
+  static const String ctaDownloadCv = 'DOWNLOAD CV';
+  static const String ctaContact = 'CONTACT';
   static const String ctaSendMessage = 'SEND MESSAGE';
 
   // Contact form
   static const String contactSubtitle =
       'Have a project in mind or want to collaborate? '
       "I'd love to hear from you.";
-  static const String formName    = 'Name';
-  static const String formEmail   = 'Email';
+  static const String formName = 'Name';
+  static const String formEmail = 'Email';
   static const String formMessage = 'Message';
 
   // Footer
@@ -115,36 +116,51 @@ const kTechStack = <(String, List<String>)>[
   (
     'Mobile Development',
     [
-      'Flutter', 'Dart', 'Swift', 'Objective-C',
-      'SwiftUI', 'UIKit', 'Xcode', 'Android Studio',
+      'Flutter',
+      'Dart',
+      'Swift',
+      'Objective-C',
+      'SwiftUI',
+      'UIKit',
+      'Xcode',
+      'Android Studio',
     ],
   ),
   (
     'Architecture',
     [
-      'Clean Architecture', 'MVVM', 'BLoC / Cubit',
-      'Riverpod', 'Repository Pattern', 'Modularization',
+      'Clean Architecture',
+      'MVVM',
+      'BLoC / Cubit',
+      'Riverpod',
+      'Repository Pattern',
+      'Modularization',
     ],
   ),
   (
     'Backend & APIs',
-    [
-      'REST APIs', 'Laravel', 'JWT', 'Firebase',
-      'MySQL', 'Docker',
-    ],
+    ['REST APIs', 'Laravel', 'JWT', 'Firebase', 'MySQL', 'Docker'],
   ),
   (
     'Tools & DevOps',
     [
-      'Git', 'GitHub Actions', 'CI/CD', 'Fastlane',
-      'TestFlight', 'Google Play Console', 'Postman',
+      'Git',
+      'GitHub Actions',
+      'CI/CD',
+      'Fastlane',
+      'TestFlight',
+      'Google Play Console',
+      'Postman',
     ],
   ),
   (
     'Systems',
     [
-      'Push Notifications', 'Background Services',
-      'QR / Barcode', 'Offline Support', 'Deep Linking',
+      'Push Notifications',
+      'Background Services',
+      'QR / Barcode',
+      'Offline Support',
+      'Deep Linking',
     ],
   ),
 ];
@@ -158,6 +174,7 @@ class Project {
   final String description;
   final List<String> techStack;
   final List<String> contribution;
+
   /// Screenshot / mockup URLs shown in the detail modal gallery.
   /// Supports https:// network images or assets/ paths.
   /// Leave empty to show the default tint-icon placeholder.
@@ -165,8 +182,10 @@ class Project {
   final ProjectCategory category;
   final String? githubUrl;
   final String? demoUrl;
+
   /// Apple App Store listing URL (optional).
   final String? appStoreUrl;
+
   /// Google Play Store listing URL (optional).
   final String? playStoreUrl;
 
@@ -211,6 +230,15 @@ const List<Project> projects = [
       'iOS Core Team member: maintained shared modules and upheld engineering standards across squads',
       'Improved app performance and reduced crash rates through profiling, refactoring, and targeted fixes',
       'Migrated legacy Objective-C codebases into Swift to improve maintainability',
+    ],
+    appStoreUrl:
+        'https://apps.apple.com/id/app/bukalapak-jual-beli-online/id1003169137',
+    // App Store screenshots — portrait iPhone mockups (750×1334 retina)
+    images: [
+      'https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/03/c0/52/03c0527e-37ed-a34b-6ed6-7d3fb17f99ce/iphone_6_7_8_Plus__U005b1242x2208_U005d_-_1_Cover.jpg/750x1334bb.jpg',
+      'https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/50/05/4e/50054ea6-78fd-ef62-1f21-e00a99bf71fc/iphone_6_7_8_Plus__U005b1242x2208_U005d_-_2_VP.jpg/750x1334bb.jpg',
+      'https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4a/67/b4/4a67b449-eb7f-6c49-4595-35c814e4cfaa/iphone_6_7_8_Plus__U005b1242x2208_U005d_-_3_BukaEmas.jpg/750x1334bb.jpg',
+      'https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4d/23/7b/4d237bf6-16ce-b2c4-06dd-718911a1f964/iphone_6_7_8_Plus__U005b1242x2208_U005d_-_4_Prakerja.jpg/750x1334bb.jpg',
     ],
   ),
   Project(
