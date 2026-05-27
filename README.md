@@ -1,128 +1,255 @@
-# Devolio — Flutter Web Portfolio
+# Flutter Web Portfolio
 
-A sleek, production-ready personal developer portfolio built with Flutter Web.
+Personal developer portfolio built with Flutter Web — responsive, dark/light themed, and auto-deployed to GitHub Pages via GitHub Actions.
 
-## ✨ Features
-
-- Animated hero section with particle background and typewriter title
-- About section with tech stack grid and hover effects
-- Projects section with category filtering and GitHub/demo links
-- Experience timeline with collapsible entries
-- Contact form with mailto fallback + social links
-- Dark/light theme toggle (dark by default)
-- Fully responsive: mobile, tablet, desktop
-- Scroll-triggered animations via `flutter_animate`
-- Optimized for GitHub Pages deployment
+**Live site → [izzuddin012.github.io/portofolio](https://izzuddin012.github.io/portofolio)**
 
 ---
 
-## 🚀 Local Setup
+## Features
 
-### Prerequisites
-- Flutter 3.x (`fvm use 3.32.8` if using FVM)
+- Hero section with stats and CTA buttons
+- About + tech stack side-by-side (desktop) / stacked (mobile)
+- Projects grid with category filter, hover cards, and tap-to-open detail modal
+- Project detail modal — description, contribution bullets, tech tags, gallery carousel, App Store / Play Store links
+- Full-screen image lightbox with pinch-to-zoom
+- Experience timeline
+- Contact section with social links
+- Dark / light theme toggle (dark by default)
+- Fully responsive — mobile, tablet, desktop
+- Branded loading splash (instant, pure CSS) that fades out when Flutter mounts
+- GitHub Actions CI/CD — push to `main` → auto build → auto deploy
 
-### Run locally
+---
+
+## Local setup
+
+**Prerequisites:** Flutter 3.32.8 via FVM (`fvm install 3.32.8`)
 
 ```bash
-flutter pub get
-flutter run -d chrome
+fvm flutter pub get
+fvm flutter run -d chrome
 ```
 
 ---
 
-## ✏️ Customizing Content
+## Customising content
 
-All user-facing text is in one file — **`lib/core/constants/app_constants.dart`**
+**Everything is in one file:**
 
-Edit: `name`, `heroTagline`, `cvUrl`, `githubUrl`, `linkedinUrl`, `twitterUrl`, `email`, bio paragraphs.
+```
+lib/core/constants/portfolio_content.dart
+```
 
-### Projects
+You never need to touch any other file to update your portfolio content.
 
-Edit **`lib/features/projects/project_data.dart`** — add/remove `Project` entries with `title`, `description`, `techStack`, `category`, `githubUrl`, `demoUrl`.
+---
 
-### Experience
-
-Edit **`lib/features/experience/experience_data.dart`** — add `Experience` entries with `company`, `role`, `dateRange`, `location`, `achievements`.
-
-### Avatar / Photo
-
-In `lib/features/hero/hero_section.dart`, find `_HeroAvatar` and replace the placeholder with:
+### 1. Personal info & links
 
 ```dart
-ClipOval(child: Image.network('your-photo-url', width: size, height: size, fit: BoxFit.cover))
+class AppConstants {
+  static const String name       = 'Your Full Name';
+  static const String firstName  = 'YourFirst';   // navbar logo + hero heading
+  static const String heroRole   = 'Your Job Title';
+  static const String heroTagline = '...';
+
+  static const String cvUrl      = 'https://...'; // CV / résumé PDF link
+  static const String githubUrl  = 'https://github.com/yourhandle';
+  static const String linkedinUrl = 'https://linkedin.com/in/yourhandle';
+  static const String email      = 'you@example.com';
+
+  static const String location           = 'Your City, Country';
+  static const String availabilityStatus = 'Open to opportunities';
+  // ⚠️  Avoid emoji here — flag/emoji characters load a 2.8 MB font at runtime
+}
+```
+
+### 2. Hero stats (4 numbers shown under the name)
+
+```dart
+static const String statYears          = '10+';
+static const String statYearsLabel     = 'Years Exp.';
+static const String statProjects       = 'M+';
+static const String statProjectsLabel  = 'Users Reached';
+static const String statDownloads      = '2';
+static const String statDownloadsLabel = 'Core Teams';
+static const String statRating         = '3.81';
+static const String statRatingLabel    = 'GPA / 4.0';
+```
+
+### 3. Bio & philosophy quote
+
+```dart
+static const String aboutBio1     = '...'; // first paragraph
+static const String aboutBio2     = '...'; // second paragraph
+static const String aboutApproach = '"..."'; // blockquote
+```
+
+### 4. Tech stack
+
+```dart
+const kTechStack = <(String, List<String>)>[
+  ('Mobile Development', ['Flutter', 'Dart', 'Swift', ...]),
+  ('Architecture',       ['Clean Architecture', 'MVVM', ...]),
+  // add or remove categories freely
+];
+```
+
+### 5. Projects
+
+Each `Project` entry supports:
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| `title` | `String` | ✓ | Card heading |
+| `description` | `String` | ✓ | Short summary (shown on card + modal) |
+| `techStack` | `List<String>` | ✓ | Tags shown on card and modal |
+| `contribution` | `List<String>` | ✓ | Bullet points in the detail modal |
+| `category` | `ProjectCategory` | — | `mobile` (default), `web`, `backend` |
+| `images` | `List<String>` | — | Screenshot URLs for gallery carousel |
+| `githubUrl` | `String?` | — | Source code link |
+| `demoUrl` | `String?` | — | Live demo link |
+| `appStoreUrl` | `String?` | — | Apple App Store link |
+| `playStoreUrl` | `String?` | — | Google Play Store link |
+
+**Example:**
+
+```dart
+Project(
+  title: 'My App',
+  description: 'Short description shown on the card.',
+  techStack: ['Flutter', 'Dart', 'BLoC'],
+  contribution: [
+    'Led architecture design from scratch',
+    'Built CI/CD pipeline with Fastlane + GitHub Actions',
+  ],
+  category: ProjectCategory.mobile,
+  images: [
+    'https://raw.githubusercontent.com/youruser/assets/main/myapp/screen1.png',
+    'https://raw.githubusercontent.com/youruser/assets/main/myapp/screen2.png',
+  ],
+  appStoreUrl:  'https://apps.apple.com/...',
+  playStoreUrl: 'https://play.google.com/...',
+),
+```
+
+> **Tip for images:** Upload screenshots to a public GitHub repo and use `raw.githubusercontent.com` URLs. These are permanent, CORS-safe, and work reliably with `Image.network()` in Flutter Web. Avoid `github.com/user-attachments/assets/` URLs — they expire after 5 minutes.
+
+### 6. Experience
+
+```dart
+Experience(
+  company:      'Company Name',
+  role:         'Your Role',
+  dateRange:    '2022 – Present',
+  location:     'City, Country',   // avoid emoji — see note above
+  achievements: [
+    'Led a team of 5 engineers...',
+    'Reduced crash rate by 40%...',
+  ],
+),
 ```
 
 ---
 
-## 🚢 GitHub Pages Deployment
+## Deployment
 
-### 1. Build
+Deployment is fully automated — just push to `main`.
 
-```bash
-# Sub-path deploy (user.github.io/<repo>)
-flutter build web --base-href "/<repo-name>/"
+### How it works
 
-# Custom domain
-flutter build web --base-href "/"
+```
+push to main
+    └─▶  GitHub Actions  (.github/workflows/deploy.yml)
+              └─▶  flutter build web --release --wasm --base-href /portofolio/
+                        └─▶  push build/web to gh-pages branch
 ```
 
-### 2. Deploy via `/docs` folder
+### First-time GitHub Pages setup (one-time only)
+
+1. Go to your repo → **Settings → Pages**
+2. Under *Source*, select **Deploy from a branch**
+3. Branch: **`gh-pages`** / folder: **`/ (root)`** → **Save**
+
+The site will be live at `https://<username>.github.io/<reponame>` after the first Actions run completes (~2–3 min).
+
+### Changing the URL path
+
+The URL path equals the repo name. To change it (e.g. `github.io/portfolio`):
+
+1. Rename the repo on GitHub (Settings → Repository name)
+2. Update `--base-href` in `.github/workflows/deploy.yml`:
+   ```yaml
+   run: flutter build web --release --base-href /your-new-name/ --wasm
+   ```
+3. Update your local remote:
+   ```bash
+   git remote set-url origin git@github.com:youruser/your-new-name.git
+   ```
+
+### Manual build (optional)
 
 ```bash
-cp -r build/web/* docs/
-git add docs/ && git commit -m "deploy" && git push
+fvm flutter build web --release --base-href /portofolio/ --wasm
 ```
 
-Set GitHub Pages source → `main` branch, `/docs` folder.
-
-### 3. 404 handling
-
-`web/404.html` handles SPA routing on GitHub Pages automatically. Check `pathSegmentsToKeep` inside it:
-- Custom domain → `0`
-- `user.github.io/<repo>` → `1` (default)
+Output goes to `build/web/`. The `--wasm` flag uses the Skwasm renderer (~1.7 MB) instead of CanvasKit (~5.6 MB), cutting initial load time significantly.
 
 ---
 
-## 📦 Key Dependencies
+## Customising the loading splash
+
+Edit the CSS + HTML in `web/index.html`. The splash is pure HTML/CSS — it renders instantly before Flutter loads and dismisses itself on the `flutter-first-frame` event.
+
+Key classes: `.splash-monogram`, `.splash-name`, `.splash-role`, `.splash-dots`
+
+Colours in the splash match the site palette — update them if you change `AppColors.accent` or `AppColors.bg`.
+
+---
+
+## Dependencies
 
 | Package | Purpose |
 |---|---|
-| `flutter_animate` | Entry/scroll animations |
+| `flutter_animate` | Section entrance and hover animations |
 | `flutter_riverpod` | Theme toggle state |
-| `google_fonts` | Space Grotesk typography |
+| `google_fonts` | Inter typeface |
 | `url_launcher` | Open links / mailto |
-| `responsive_framework` | Breakpoint helpers |
 
 ---
 
-## 🎨 Theming
-
-- Colors → `lib/core/theme/app_colors.dart`
-- Theme config → `lib/core/theme/app_theme.dart`
-- Theme toggle state → `lib/providers.dart`
-
----
-
-## 📁 Structure
+## Project structure
 
 ```
 lib/
 ├── core/
-│   ├── constants/app_constants.dart   ← all text + TODOs
-│   ├── theme/app_colors.dart + app_theme.dart
+│   ├── constants/
+│   │   └── portfolio_content.dart   ← EDIT THIS FILE TO CUSTOMISE
+│   ├── theme/
+│   │   ├── app_colors.dart          ← colour palette
+│   │   ├── app_theme.dart           ← Material theme config
+│   │   └── app_typography.dart      ← named text styles
 │   └── utils/responsive.dart
 ├── features/
 │   ├── hero/hero_section.dart
 │   ├── about/about_section.dart
-│   ├── projects/project_section.dart + data + model
-│   ├── experience/experience_section.dart + data + model
+│   ├── projects/project_section.dart
+│   ├── experience/experience_section.dart
 │   └── contact/contact_section.dart
 ├── shared/
 │   ├── layout/app_container.dart
-│   └── widgets/app_navbar.dart + section_title.dart + footer.dart
-├── providers.dart
+│   └── widgets/
+│       ├── app_navbar.dart
+│       ├── section_title.dart
+│       └── footer.dart
 └── main.dart
+
 web/
-├── index.html     ← GitHub Pages ready
-└── 404.html       ← SPA routing redirect
+├── index.html    ← loading splash + SEO meta tags
+└── 404.html      ← GitHub Pages SPA routing workaround
+
+.github/
+└── workflows/
+    └── deploy.yml   ← CI/CD pipeline
 ```
