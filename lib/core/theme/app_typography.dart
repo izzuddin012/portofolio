@@ -88,12 +88,11 @@ class AppTypography {
     height: 1.1,
   );
 
-  /// Subtitle line beneath a section heading.
+  /// Subtitle line beneath a section heading. No colour — apply via copyWith.
   static final TextStyle sectionSubtitle = GoogleFonts.inter(
     fontSize: 15,
     height: 1.6,
-    fontWeight: FontWeight.w300,
-    color: AppColors.textSecondary,
+    fontWeight: FontWeight.w400,
   );
 
   // ── Body text ─────────────────────────────────────────────────────────────
@@ -102,22 +101,21 @@ class AppTypography {
   static final TextStyle bodyLg = GoogleFonts.inter(
     fontSize: 15,
     height: 1.85,
-    fontWeight: FontWeight.w300,
+    fontWeight: FontWeight.w400,
   );
 
-  /// Standard body — achievements, descriptions (14 pt).
+  /// Standard body — achievements, descriptions (14 pt). No colour — apply via copyWith.
   static final TextStyle bodyMd = GoogleFonts.inter(
     fontSize: 14,
     height: 1.65,
-    fontWeight: FontWeight.w300,
-    color: AppColors.textSecondary,
+    fontWeight: FontWeight.w400,
   );
 
   /// Small body — social description, misc labels (13 pt).
   static final TextStyle bodySm = GoogleFonts.inter(
     fontSize: 13,
     height: 1.75,
-    fontWeight: FontWeight.w300,
+    fontWeight: FontWeight.w400,
   );
 
   // ── Accent text ───────────────────────────────────────────────────────────
@@ -132,7 +130,7 @@ class AppTypography {
 
   /// ALL-CAPS category label (e.g. "MOBILE DEVELOPMENT", "QUICK INFO").
   static final TextStyle categoryLabel = GoogleFonts.inter(
-    fontSize: 10,
+    fontSize: 11,
     fontWeight: FontWeight.w700,
     letterSpacing: 2,
     color: AppColors.accent,
@@ -214,19 +212,17 @@ class AppTypography {
     letterSpacing: -0.3,
   );
 
-  /// Project card description.
+  /// Project card description. No colour — apply via copyWith.
   static final TextStyle cardDesc = GoogleFonts.inter(
     fontSize: 13,
     height: 1.6,
-    fontWeight: FontWeight.w300,
-    color: AppColors.textSecondary,
+    fontWeight: FontWeight.w400,
   );
 
-  /// Tech stack tag inside a project card.
+  /// Tech stack tag inside a project card. No colour — apply via copyWith.
   static final TextStyle techTag = GoogleFonts.inter(
-    fontSize: 11,
+    fontSize: 12,
     fontWeight: FontWeight.w400,
-    color: AppColors.textSecondary,
   );
 
   // ── Experience ────────────────────────────────────────────────────────────
@@ -245,18 +241,16 @@ class AppTypography {
     color: AppColors.accent,
   );
 
-  /// Location beside the company name.
+  /// Location beside the company name. No colour — apply via copyWith.
   static final TextStyle expLocation = GoogleFonts.inter(
     fontSize: 13,
-    color: AppColors.textSecondary,
   );
 
-  /// Achievement bullet text.
+  /// Achievement bullet text. No colour — apply via copyWith.
   static final TextStyle expAchievement = GoogleFonts.inter(
     fontSize: 14,
     height: 1.65,
-    fontWeight: FontWeight.w300,
-    color: AppColors.textSecondary,
+    fontWeight: FontWeight.w400,
   );
 
   // ── Contact ───────────────────────────────────────────────────────────────
@@ -289,11 +283,10 @@ class AppTypography {
     fontWeight: FontWeight.w600,
   );
 
-  /// Social handle / username.
+  /// Social handle / username. No colour — apply via copyWith.
   static final TextStyle socialHandle = GoogleFonts.inter(
     fontSize: 12,
     fontWeight: FontWeight.w400,
-    color: AppColors.textSecondary,
   );
 
   /// Text input field style.
@@ -309,12 +302,11 @@ class AppTypography {
     color: AppColors.textPrimary,
   );
 
-  /// Success card body text.
+  /// Success card body text. No colour — apply via copyWith.
   static final TextStyle successDesc = GoogleFonts.inter(
     fontSize: 14,
-    fontWeight: FontWeight.w300,
+    fontWeight: FontWeight.w400,
     height: 1.6,
-    color: AppColors.textSecondary,
   );
 
   /// "Send another message →" link.
@@ -353,10 +345,9 @@ class AppTypography {
     color: AppColors.textMuted,
   );
 
-  /// Footer navigation link.
+  /// Footer navigation link. No colour — apply via copyWith.
   static final TextStyle footerNavLink = GoogleFonts.inter(
     fontSize: 13,
     fontWeight: FontWeight.w400,
-    color: AppColors.textSecondary,
   );
 }

@@ -42,7 +42,11 @@ class SectionTitle extends StatelessWidget {
           const SizedBox(height: 12),
           Text(
             subtitle!,
-            style: AppTypography.sectionSubtitle,
+            style: AppTypography.sectionSubtitle.copyWith(
+              color: Theme.of(context).brightness == Brightness.dark
+                  ? AppColors.textSecondary
+                  : AppColors.lightTextSecondary,
+            ),
           ).animate().fadeIn(delay: 200.ms, duration: 400.ms),
         ],
       ],

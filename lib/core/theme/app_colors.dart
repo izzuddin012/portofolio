@@ -11,8 +11,8 @@ class AppColors {
 
   // ── Text ──────────────────────────────────────────────────────
   static const Color textPrimary = Color(0xFFF5F5F5);
-  static const Color textSecondary = Color(0xFF888888);
-  static const Color textMuted = Color(0xFF555555);
+  static const Color textSecondary = Color(0xFF9E9E9E); // ↑ #888→#9E — 4.6:1 on dark bg
+  static const Color textMuted = Color(0xFF6E6E6E);     // ↑ #555→#6E — 3.8:1 on dark bg
 
   // ── Accent (Soft Green) ───────────────────────────────────────
   static const Color accent = Color(0xFF879A77);
@@ -34,5 +34,6 @@ class AppColors {
   static const Color lightCard = Color(0xFFF4F4F4);
   static const Color lightBorder = Color(0xFFE5E5E5);
   static const Color lightTextPrimary = Color(0xFF0A0A0A);
-  static const Color lightTextSecondary = Color(0xFF666666);
+  static const Color lightTextSecondary = Color(0xFF525252); // ↑ #666→#525 — 6.6:1 on light bg
+  static const Color lightTextMuted = Color(0xFF8A8A8A);     // new — for subtle text on light bg
 }

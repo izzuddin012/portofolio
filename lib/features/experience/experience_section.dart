@@ -110,7 +110,11 @@ class _ExperienceItem extends StatelessWidget {
                       if (e.location != null)
                         Text(
                           '  ·  ${e.location}',
-                          style: AppTypography.expLocation,
+                          style: AppTypography.expLocation.copyWith(
+                            color: isDark
+                                ? AppColors.textSecondary
+                                : AppColors.lightTextSecondary,
+                          ),
                         ),
                     ],
                   ),
@@ -136,7 +140,11 @@ class _ExperienceItem extends StatelessWidget {
                           Expanded(
                             child: Text(
                               a,
-                              style: AppTypography.expAchievement,
+                              style: AppTypography.expAchievement.copyWith(
+                                color: isDark
+                                    ? AppColors.textSecondary
+                                    : AppColors.lightTextSecondary,
+                              ),
                             ),
                           ),
                         ],
