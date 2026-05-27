@@ -3,61 +3,57 @@
 //
 //  Sections:
 //    1. Personal info & links
-//    2. Hero stats
-//    3. About / bio
-//    4. UI labels (nav, CTAs, section headings)
-//    5. Tech stack
-//    6. Projects
-//    7. Experience
+//    2. About / bio
+//    3. UI labels (nav, CTAs, section headings)
+//    4. Tech stack
+//    5. Projects
+//    6. Experience
 // ═══════════════════════════════════════════════════════════════════════════════
 
 // ── 1. Personal info & links ──────────────────────────────────────────────────
 
 class AppConstants {
-  static const String name = 'Muhammad Izzuddin';
-  static const String shortName = 'Izzuddin';
+  static const String name = 'Your Full Name';
+  static const String shortName = 'YourName';
 
   // Used in hero heading (80 pt) and navbar logo
-  static const String firstName = 'Muhammad Izzuddin';
+  static const String firstName = 'Your Full Name';
 
   // Headline shown under the name
-  static const String heroRole = 'Senior Mobile Apps Engineer';
+  static const String heroRole = 'Your Job Title';
   static const String heroTagline =
-      '10+ years building high-performance mobile apps for iOS & Flutter — '
-      'from large-scale e-commerce\n to real-time logistics systems.';
+      'A short tagline describing your work and expertise.\n'
+      'Keep it to two or three lines for best visual balance.';
 
   // Direct link to your CV / résumé PDF
-  static const String cvUrl =
-      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/cv/Resume%20-%20Muhammad%20Izzuddin.pdf';
+  static const String cvUrl = 'https://example.com/your-cv.pdf';
 
   // Social / contact links
-  static const String githubUrl = 'https://github.com/izzuddin012';
-  static const String linkedinUrl = 'https://linkedin.com/in/izzuddin012';
-  static const String email = 'izzuddin.m012@gmail.com';
+  static const String githubUrl = 'https://github.com/yourusername';
+  static const String linkedinUrl = 'https://linkedin.com/in/yourusername';
+  static const String email = 'you@example.com';
 
   // Location & availability
-  static const String location = 'Indonesia';
+  // ⚠️  Avoid emoji here — flag/emoji characters load a 2.8 MB font at runtime
+  static const String location = 'Your City, Country';
   static const String availabilityStatus = 'Open to opportunities';
 
   // ── 2. About / bio ─────────────────────────────────────────────────────────
 
   static const String aboutBio1 =
-      'I\'m a Senior Mobile Apps Engineer with over 10 years of experience '
-      'building high-performance mobile applications across iOS and Flutter. '
-      'My work spans large-scale e-commerce platforms serving millions of users '
-      'to real-time operational tools for logistics and supply chain.';
+      'Write your first bio paragraph here. Describe your background, '
+      'years of experience, and the kind of work you do. '
+      'Keep it personal and specific — what makes your experience unique?';
 
   static const String aboutBio2 =
-      'I specialize in clean architecture, performance optimization, and '
-      'system-level thinking — taking ownership of both feature delivery and '
-      'engineering standards. I\'ve served on Flutter and iOS Core Teams, '
-      'defining shared patterns and driving reliability improvements across the stack.';
+      'Write your second bio paragraph here. Focus on your specialisations, '
+      'how you approach engineering problems, and what you care about '
+      'most in your craft.';
 
   // Engineering philosophy / blockquote
   static const String aboutApproach =
-      '"Scalable systems, performance optimization, operational excellence — '
-      'not just buzzwords, but the lens through which every architectural '
-      'decision gets made."';
+      '"A short quote or engineering philosophy that reflects '
+      'how you think about your work."';
 
   // ── 3. UI labels ───────────────────────────────────────────────────────────
 
@@ -102,54 +98,16 @@ class AppConstants {
 
 const kTechStack = <(String, List<String>)>[
   (
-    'Mobile Development',
-    [
-      'Flutter',
-      'Dart',
-      'Swift',
-      'Objective-C',
-      'SwiftUI',
-      'UIKit',
-      'Xcode',
-      'Android Studio',
-    ],
+    'Category One',
+    ['Skill A', 'Skill B', 'Skill C', 'Skill D'],
   ),
   (
-    'Architecture',
-    [
-      'Clean Architecture',
-      'MVVM',
-      'BLoC / Cubit',
-      'Riverpod',
-      'Repository Pattern',
-      'Modularization',
-    ],
+    'Category Two',
+    ['Skill E', 'Skill F', 'Skill G', 'Skill H'],
   ),
   (
-    'Backend & APIs',
-    ['REST APIs', 'Laravel', 'JWT', 'Firebase', 'MySQL', 'Docker'],
-  ),
-  (
-    'Tools & DevOps',
-    [
-      'Git',
-      'GitHub Actions',
-      'CI/CD',
-      'Fastlane',
-      'TestFlight',
-      'Google Play Console',
-      'Postman',
-    ],
-  ),
-  (
-    'Systems',
-    [
-      'Push Notifications',
-      'Background Services',
-      'QR / Barcode',
-      'Offline Support',
-      'Deep Linking',
-    ],
+    'Category Three',
+    ['Skill I', 'Skill J', 'Skill K'],
   ),
 ];
 
@@ -192,166 +150,54 @@ class Project {
 }
 
 const List<Project> projects = [
-  // ── Bukalapak iOS ───────────────────────────────────────────────────────────
+  // ── Project 1 ───────────────────────────────────────────────────────────────
   Project(
-    title: 'Bukalapak',
+    title: 'Project One',
     description:
-        'iOS app for one of Indonesia\'s largest marketplaces — serving millions '
-        'of buyers and sellers.',
-    techStack: [
-      'Swift',
-      'Objective-C',
-      'UIKit',
-      'Programmatic Autolayout',
-      'MVVM',
-      'Firebase',
-    ],
+        'A short description of this project — what it is, who it serves, '
+        'and the problem it solves.',
+    techStack: ['Flutter', 'Dart', 'Firebase', 'REST API'],
     contribution: [
-      'Shipped "Nego Cincai" — a viral price-negotiation feature that became '
-          'one of Bukalapak\'s signature social commerce mechanics (2017)',
-      'Built virtual product purchase flows for mobile top-ups, flight tickets, '
-          'and train tickets, integrating multiple third-party provider APIs',
-      'Led migration from Storyboard/XIB to programmatic Autolayout, '
-          'significantly improving maintainability and layout flexibility at scale',
-      'Built generic reusable UITableView/UICollectionView components '
-          'adopted across multiple squads in the iOS codebase',
-      'Developed and iterated on seller features including product listing, '
-          'inventory management, and order fulfilment workflows',
+      'Describe what you built or contributed to in this project',
+      'Highlight any technical challenges you solved',
+      'Mention impact: performance gains, users reached, team benefits',
     ],
-    images: [
-      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Bukalapak/bukalapak_0.png',
-      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Bukalapak/bukalapak_1.png',
-      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Bukalapak/bukalapak_2.png',
-      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Bukalapak/bukalapak_3.png',
-      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Bukalapak/bukalapak_4.png',
-    ],
-    appStoreUrl:
-        'https://apps.apple.com/id/app/bukalapak-jual-beli-online/id1003169137',
+    // images: ['https://raw.githubusercontent.com/youruser/assets/main/project1/screen1.png'],
+    // appStoreUrl: 'https://apps.apple.com/...',
+    // playStoreUrl: 'https://play.google.com/...',
+    // githubUrl: 'https://github.com/youruser/project1',
   ),
 
-  // ── Allofresh consumer app ──────────────────────────────────────────────────
+  // ── Project 2 ───────────────────────────────────────────────────────────────
   Project(
-    title: 'Allofresh',
+    title: 'Project Two',
     description:
-        'Consumer-facing Flutter grocery app — built on a clean multi-module '
-        'architecture migrated from native',
-    techStack: [
-      'Flutter',
-      'Dart',
-      'BLoC',
-      'Clean Architecture',
-      'Modularization',
-      'REST API',
-    ],
+        'A short description of this project — what it is, who it serves, '
+        'and the problem it solves.',
+    techStack: ['Flutter', 'Dart', 'BLoC', 'Clean Architecture'],
     contribution: [
-      'Led multi-module architecture design during migration from native to Flutter, '
-          'enabling independent parallel feature delivery across squads',
-      'Built a network wrapper module that standardized API communication, '
-          'response parsing, and error handling across all app modules',
-      'Designed and implemented an impression tracker — capturing which sections '
-          'users actually see, feeding behavioral data directly into product decisions',
-      'Managed the full release pipeline: internal testing, staged rollouts, '
-          'and App Store & Play Store submissions',
+      'Describe what you built or contributed to in this project',
+      'Highlight any technical challenges you solved',
+      'Mention impact: performance gains, users reached, team benefits',
     ],
-    images: [
-      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Allofresh/allofresh_0.png',
-      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Allofresh/allofresh_1.jpg',
-      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Allofresh/allofresh_2.jpg',
-      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Allofresh/allofresh_3.jpg',
-      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Allofresh/allofresh_4.jpg',
-      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Allofresh/allofresh_5.jpg',
-    ],
-    appStoreUrl:
-        'https://apps.apple.com/id/app/allofresh-grocery-shopping/id1610121515',
-    playStoreUrl:
-        'https://play.google.com/store/apps/details?id=id.allofresh.ecommerce&hl=en',
+    // images: ['https://raw.githubusercontent.com/youruser/assets/main/project2/screen1.png'],
   ),
 
-  // ── PickPack (mid-mile warehouse ops) ───────────────────────────────────────
+  // ── Project 3 ───────────────────────────────────────────────────────────────
   Project(
-    title: 'PickPack by Allofresh',
+    title: 'Project Three',
     description:
-        'Flutter warehouse operations app — owned end-to-end, driving midmile '
-        'picking & packing workflows with hardware integrations for barcode '
-        'scanners and thermal printers.',
-    techStack: [
-      'Flutter',
-      'Dart',
-      'BLoC',
-      'CI/CD',
-      'Fastlane',
-      'GitHub Actions',
-      'Barcode Scanner',
-      'Thermal Printer',
-    ],
-    contribution: [
-      'Sole owner of the app end-to-end — architecture, features, integrations, '
-          'and every production release decision',
-      'Drove three major Flutter SDK migrations (1.x → 2.x → 3.x), keeping '
-          'the app on stable, modern foundations with zero feature regressions',
-      'Integrated barcode scanners and thermal printers, equipping warehouse '
-          'staff with hardware-backed workflows that cut manual steps',
-      'Built CI/CD pipelines for automated unit testing and static analysis '
-          'on every pull request, maintaining code quality at scale',
-      'Resolved persistent data sync issues between packaging and inventory '
-          'services, improving fulfillment accuracy across warehouse operations',
-      'Managed internal test distribution and full Play Store submission lifecycle',
-    ],
-    images: [
-      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/pickpack/pickpack_0.png',
-      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/pickpack/pickpack_1.png',
-      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/pickpack/pickpack_2.png',
-      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/pickpack/pickpack_3.png',
-      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/pickpack/pickpack_4.png',
-    ],
-    playStoreUrl:
-        'https://play.google.com/store/apps/details?id=id.allofresh.pickpack&hl=id',
-  ),
-
-  // ── Kingkong Meats ──────────────────────────────────────────────────────────
-  Project(
-    title: 'Kingkong Meats',
-    description:
-        'Flutter e-commerce app built from scratch for a specialty meat retailer '
-        '— covering product browsing, cart, and push notifications, '
-        'launched on both App Store and Play Store.',
-    techStack: [
-      'Flutter',
-      'Dart',
-      'Clean Architecture',
-      'Firebase',
-      'REST API',
-    ],
-    contribution: [
-      'Contributed to app architecture design from day zero, establishing '
-          'scalable patterns for the team to build on',
-      'Built core commerce features: product listing with filters, '
-          'cart management, and push notification delivery',
-      'Prepared and launched the app on both App Store and Play Store, '
-          'handling all submission, compliance, and release requirements',
-    ],
-    images: [
-      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Kingkong%20Meats/kingkong_0.png',
-      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Kingkong%20Meats/kingkong_1.png',
-      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/Kingkong%20Meats/kingkong_2.png',
-    ],
-  ),
-
-  // ── Developer Portfolio ─────────────────────────────────────────────────────
-  Project(
-    title: 'Developer Portfolio (This Site)',
-    description:
-        'This portfolio — built entirely in Flutter Web with clean architecture, '
-        'Riverpod state management, and GitHub Pages deployment.',
-    techStack: ['Flutter Web', 'Riverpod', 'flutter_animate', 'GitHub Pages'],
+        'A short description of this project — what it is, who it serves, '
+        'and the problem it solves.',
+    techStack: ['Flutter Web', 'Riverpod', 'GitHub Pages'],
     category: ProjectCategory.web,
     contribution: [
-      'Designed and built the full portfolio UI from scratch in Flutter Web',
-      'Implemented responsive layouts for desktop, tablet, and mobile viewports',
-      'Built dark/light theme toggle, smooth scroll navigation, and section entrance animations',
-      'Created a single-file content system (portfolio_content.dart) for easy future updates',
-      'Set up GitHub Pages deployment with SPA routing via a custom 404.html redirect',
+      'Describe what you built or contributed to in this project',
+      'Highlight any technical challenges you solved',
+      'Mention impact: performance gains, users reached, team benefits',
     ],
+    // demoUrl: 'https://yourusername.github.io/project3',
+    // githubUrl: 'https://github.com/youruser/project3',
   ),
 ];
 
@@ -375,31 +221,25 @@ class Experience {
 
 const List<Experience> experiences = [
   Experience(
-    company: 'Allofresh',
-    role: 'Senior Mobile Apps Engineer (Flutter)',
-    dateRange: '2022 – 2026',
-    location: 'Indonesia',
+    company: 'Company Name',
+    role: 'Your Role Title',
+    dateRange: '2022 – Present',
+    location: 'City, Country',   // avoid emoji — see note in section 1
     achievements: [
-      'Core contributor to Flutter applications supporting midmile and lastmile logistics operations',
-      'Member of Flutter Core Team — defined architecture standards and built shared modules across all apps',
-      'Built scalable features for store operations: tasking, packing, and delivery flows',
-      'Resolved duplicate API requests and state inconsistency issues, improving app stability',
-      'Enhanced logging, monitoring, and debugging capabilities for high-frequency operational usage',
-      'Improved workflow efficiency for warehouse and store users through targeted UX and performance work',
+      'Describe a key achievement or responsibility in this role',
+      'Quantify impact where possible — e.g. reduced crash rate by 40%',
+      'Mention team size, scope, or scale if relevant',
     ],
   ),
   Experience(
-    company: 'Bukalapak',
-    role: 'Senior Mobile Apps Engineer (iOS Native, Flutter)',
-    dateRange: '2016 – 2022',
-    location: 'Indonesia',
+    company: 'Previous Company',
+    role: 'Your Previous Role',
+    dateRange: '2018 – 2022',
+    location: 'City, Country',
     achievements: [
-      'Developed large-scale iOS applications serving millions of users on one of Indonesia\'s largest marketplaces',
-      'Member of iOS Core Team — maintained shared modules and upheld engineering standards across teams',
-      'Enhanced seller experience including product listing, order management, and fulfillment workflows',
-      'Built and maintained virtual product systems for digital goods and mobile top-ups',
-      'Migrated legacy Objective-C codebases to Swift, improving maintainability and performance',
-      'Improved app performance and reduced crash rates through targeted profiling and refactoring',
+      'Describe a key achievement or responsibility in this role',
+      'Quantify impact where possible',
+      'Mention any leadership, mentoring, or cross-team work',
     ],
   ),
 ];

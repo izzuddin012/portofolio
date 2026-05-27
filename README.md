@@ -2,8 +2,6 @@
 
 Personal developer portfolio built with Flutter Web — responsive, dark/light themed, and auto-deployed to GitHub Pages via GitHub Actions.
 
-**Live site → [izzuddin012.github.io/portofolio](https://izzuddin012.github.io/portofolio)**
-
 ---
 
 ## Features
@@ -149,7 +147,7 @@ Deployment is fully automated — just push to `main`.
 ```
 push to main
     └─▶  GitHub Actions  (.github/workflows/deploy.yml)
-              └─▶  flutter build web --release --wasm --base-href /portofolio/
+              └─▶  flutter build web --release --wasm --base-href /your-repo-name/
                         └─▶  push build/web to gh-pages branch
 ```
 
@@ -178,7 +176,7 @@ The URL path equals the repo name. To change it (e.g. `github.io/portfolio`):
 ### Manual build (optional)
 
 ```bash
-fvm flutter build web --release --base-href /portofolio/ --wasm
+fvm flutter build web --release --base-href /your-repo-name/ --wasm
 ```
 
 Output goes to `build/web/`. The `--wasm` flag uses the Skwasm renderer (~1.7 MB) instead of CanvasKit (~5.6 MB), cutting initial load time significantly.
@@ -187,9 +185,17 @@ Output goes to `build/web/`. The `--wasm` flag uses the Skwasm renderer (~1.7 MB
 
 ## Customising the loading splash
 
-Edit the CSS + HTML in `web/index.html`. The splash is pure HTML/CSS — it renders instantly before Flutter loads and dismisses itself on the `flutter-first-frame` event.
+Edit the HTML in `web/index.html`. The splash is pure HTML/CSS — it renders instantly before Flutter loads and dismisses itself on the `flutter-first-frame` event.
 
-Key classes: `.splash-monogram`, `.splash-name`, `.splash-role`, `.splash-dots`
+Update these three values inside the `<div id="loading">` block:
+
+```html
+<div class="splash-monogram"><span>YN</span></div>  <!-- 2-letter monogram -->
+<div class="splash-name">Your Name</div>
+<div class="splash-role">Your Job Title</div>
+```
+
+Key CSS classes: `.splash-monogram`, `.splash-name`, `.splash-role`, `.splash-dots`
 
 Colours in the splash match the site palette — update them if you change `AppColors.accent` or `AppColors.bg`.
 
