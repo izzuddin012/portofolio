@@ -23,9 +23,8 @@ class AppConstants {
   // Headline shown under the name
   static const String heroRole = 'Senior Mobile Apps Engineer';
   static const String heroTagline =
-      '10+ years building high-performance mobile apps\n'
-      'for iOS & Flutter — from large-scale e-commerce\n'
-      'to real-time logistics systems.';
+      '10+ years building high-performance mobile apps for iOS & Flutter — '
+      'from large-scale e-commerce\n to real-time logistics systems.';
 
   // Direct link to your CV / résumé PDF
   static const String cvUrl =
@@ -40,18 +39,7 @@ class AppConstants {
   static const String location = 'Indonesia';
   static const String availabilityStatus = 'Open to opportunities';
 
-  // ── 2. Hero stats ──────────────────────────────────────────────────────────
-
-  static const String statYears = '10+';
-  static const String statYearsLabel = 'Years Exp.';
-  static const String statProjects = 'M+';
-  static const String statProjectsLabel = 'Users Reached';
-  static const String statDownloads = '2';
-  static const String statDownloadsLabel = 'Core Teams';
-  static const String statRating = '3.81';
-  static const String statRatingLabel = 'GPA / 4.0';
-
-  // ── 3. About / bio ─────────────────────────────────────────────────────────
+  // ── 2. About / bio ─────────────────────────────────────────────────────────
 
   static const String aboutBio1 =
       'I\'m a Senior Mobile Apps Engineer with over 10 years of experience '
@@ -71,7 +59,7 @@ class AppConstants {
       'not just buzzwords, but the lens through which every architectural '
       'decision gets made."';
 
-  // ── 4. UI labels ───────────────────────────────────────────────────────────
+  // ── 3. UI labels ───────────────────────────────────────────────────────────
 
   // Nav
   static const String navHome = 'Home';
@@ -107,7 +95,7 @@ class AppConstants {
   static const String footerBuilt = 'Built with Flutter Web';
 }
 
-// ── 5. Tech stack ─────────────────────────────────────────────────────────────
+// ── 4. Tech stack ─────────────────────────────────────────────────────────────
 //
 //  Each entry is  (categoryName, [skill, skill, ...])
 //  Add, remove or rename entries freely.
@@ -165,7 +153,7 @@ const kTechStack = <(String, List<String>)>[
   ),
 ];
 
-// ── 6. Projects ───────────────────────────────────────────────────────────────
+// ── 5. Projects ───────────────────────────────────────────────────────────────
 
 enum ProjectCategory { all, mobile, web, backend }
 
@@ -367,7 +355,7 @@ const List<Project> projects = [
   ),
 ];
 
-// ── 7. Experience ─────────────────────────────────────────────────────────────
+// ── 6. Experience ─────────────────────────────────────────────────────────────
 
 class Experience {
   final String company;
