@@ -124,7 +124,11 @@ class _Chip extends StatelessWidget {
           child: Text(
             label,
             style: AppTypography.filterChip.copyWith(
-              color: isSelected ? Colors.white : AppColors.textSecondary,
+              color: isSelected
+                  ? Colors.white
+                  : (isDark
+                      ? AppColors.textSecondary
+                      : AppColors.lightTextSecondary),
             ),
           ),
         ),
@@ -310,7 +314,11 @@ class _ProjectCardState extends State<ProjectCard> {
                       const SizedBox(height: 8),
                       Text(
                         p.description,
-                        style: AppTypography.cardDesc,
+                        style: AppTypography.cardDesc.copyWith(
+                          color: isDark
+                              ? AppColors.textSecondary
+                              : AppColors.lightTextSecondary,
+                        ),
                         maxLines: 3,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -439,7 +447,14 @@ class _IconLink extends StatelessWidget {
         },
         child: Padding(
           padding: const EdgeInsets.all(4),
-          child: Icon(icon, size: 16, color: AppColors.textSecondary),
+          child: Builder(builder: (context) {
+            final isDark = Theme.of(context).brightness == Brightness.dark;
+            return Icon(
+              icon,
+              size: 16,
+              color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
+            );
+          }),
         ),
       ),
     );
@@ -464,7 +479,9 @@ class _TechTag extends StatelessWidget {
       ),
       child: Text(
         label,
-        style: AppTypography.techTag,
+        style: AppTypography.techTag.copyWith(
+          color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
+        ),
       ),
     );
   }

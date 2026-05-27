@@ -332,7 +332,11 @@ class _SocialCardState extends State<_SocialCard> {
                     ),
                     Text(
                       widget.handle,
-                      style: AppTypography.socialHandle,
+                      style: AppTypography.socialHandle.copyWith(
+                        color: widget.isDark
+                            ? AppColors.textSecondary
+                            : AppColors.lightTextSecondary,
+                      ),
                     ),
                   ],
                 ),
@@ -346,7 +350,9 @@ class _SocialCardState extends State<_SocialCard> {
                   size: 16,
                   color: _hovered
                       ? AppColors.accent
-                      : AppColors.textMuted,
+                      : (widget.isDark
+                          ? AppColors.textMuted
+                          : AppColors.lightTextMuted),
                 ),
               ),
             ],
@@ -535,6 +541,7 @@ class _SuccessCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Container(
       padding: const EdgeInsets.all(32),
       decoration: BoxDecoration(
@@ -562,7 +569,11 @@ class _SuccessCard extends StatelessWidget {
           const SizedBox(height: 8),
           Text(
             "Thanks for reaching out. I'll get back to you within 24 hours.",
-            style: AppTypography.successDesc,
+            style: AppTypography.successDesc.copyWith(
+              color: isDark
+                  ? AppColors.textSecondary
+                  : AppColors.lightTextSecondary,
+            ),
           ),
           const SizedBox(height: 24),
           GestureDetector(

@@ -8,7 +8,7 @@ Personal developer portfolio built with Flutter Web — responsive, dark/light t
 
 ## Features
 
-- Hero section with stats and CTA buttons
+- Hero section with CTA buttons
 - About + tech stack side-by-side (desktop) / stacked (mobile)
 - Projects grid with category filter, hover cards, and tap-to-open detail modal
 - Project detail modal — description, contribution bullets, tech tags, gallery carousel, App Store / Play Store links
@@ -65,20 +65,7 @@ class AppConstants {
 }
 ```
 
-### 2. Hero stats (4 numbers shown under the name)
-
-```dart
-static const String statYears          = '10+';
-static const String statYearsLabel     = 'Years Exp.';
-static const String statProjects       = 'M+';
-static const String statProjectsLabel  = 'Users Reached';
-static const String statDownloads      = '2';
-static const String statDownloadsLabel = 'Core Teams';
-static const String statRating         = '3.81';
-static const String statRatingLabel    = 'GPA / 4.0';
-```
-
-### 3. Bio & philosophy quote
+### 2. Bio & philosophy quote
 
 ```dart
 static const String aboutBio1     = '...'; // first paragraph
@@ -86,7 +73,7 @@ static const String aboutBio2     = '...'; // second paragraph
 static const String aboutApproach = '"..."'; // blockquote
 ```
 
-### 4. Tech stack
+### 3. Tech stack
 
 ```dart
 const kTechStack = <(String, List<String>)>[
@@ -96,7 +83,7 @@ const kTechStack = <(String, List<String>)>[
 ];
 ```
 
-### 5. Projects
+### 4. Projects
 
 Each `Project` entry supports:
 
@@ -136,7 +123,7 @@ Project(
 
 > **Tip for images:** Upload screenshots to a public GitHub repo and use `raw.githubusercontent.com` URLs. These are permanent, CORS-safe, and work reliably with `Image.network()` in Flutter Web. Avoid `github.com/user-attachments/assets/` URLs — they expire after 5 minutes.
 
-### 6. Experience
+### 5. Experience
 
 ```dart
 Experience(
