@@ -49,114 +49,106 @@ class _ExperienceItem extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final e = exp;
 
-    return IntrinsicHeight(
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          // Timeline spine
-          SizedBox(
-            width: 20,
-            child: Column(
-              children: [
-                Container(
-                  width: 10,
-                  height: 10,
-                  decoration: BoxDecoration(
-                    color: AppColors.accent,
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
-                        color: AppColors.accent.withValues(alpha: 0.4),
-                        blurRadius: 8,
-                      ),
-                    ],
-                  ),
+    return Stack(
+      children: [
+        // ── Content (drives the Stack height) ──────────────────────────
+        Padding(
+          padding: EdgeInsets.only(left: 44, bottom: isLast ? 0 : 40),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                e.role,
+                style: AppTypography.expRole.copyWith(
+                  color: isDark
+                      ? AppColors.textPrimary
+                      : AppColors.lightTextPrimary,
                 ),
-                if (!isLast)
-                  Expanded(
-                    child: Container(
-                      width: 1,
-                      color: isDark ? AppColors.border : AppColors.lightBorder,
-                      margin: const EdgeInsets.symmetric(vertical: 4),
-                    ),
-                  ),
-              ],
-            ),
-          ),
-          const SizedBox(width: 24),
-          // Content
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.only(bottom: isLast ? 0 : 40),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              ),
+              const SizedBox(height: 4),
+              Row(
                 children: [
-                  // Header: role, company, date
-                  Text(
-                    e.role,
-                    style: AppTypography.expRole.copyWith(
-                      color: isDark
-                          ? AppColors.textPrimary
-                          : AppColors.lightTextPrimary,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Row(
-                    children: [
-                      Text(
-                        e.company,
-                        style: AppTypography.expCompany,
+                  Text(e.company, style: AppTypography.expCompany),
+                  if (e.location != null)
+                    Text(
+                      '  ·  ${e.location}',
+                      style: AppTypography.expLocation.copyWith(
+                        color: isDark
+                            ? AppColors.textSecondary
+                            : AppColors.lightTextSecondary,
                       ),
-                      if (e.location != null)
-                        Text(
-                          '  ·  ${e.location}',
-                          style: AppTypography.expLocation.copyWith(
+                    ),
+                ],
+              ),
+              const SizedBox(height: 6),
+              _DateBadge(dateRange: e.dateRange),
+              const SizedBox(height: 20),
+              ...e.achievements.map(
+                (a) => Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        width: 5,
+                        height: 5,
+                        margin: const EdgeInsets.only(top: 7, right: 12),
+                        decoration: const BoxDecoration(
+                          color: AppColors.accent,
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                      Expanded(
+                        child: Text(
+                          a,
+                          style: AppTypography.expAchievement.copyWith(
                             color: isDark
                                 ? AppColors.textSecondary
                                 : AppColors.lightTextSecondary,
                           ),
                         ),
+                      ),
                     ],
                   ),
-                  const SizedBox(height: 6),
-                  _DateBadge(dateRange: e.dateRange),
-                  // Achievements — always visible
-                  const SizedBox(height: 20),
-                  ...e.achievements.map(
-                    (a) => Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            width: 5,
-                            height: 5,
-                            margin: const EdgeInsets.only(top: 7, right: 12),
-                            decoration: const BoxDecoration(
-                              color: AppColors.accent,
-                              shape: BoxShape.circle,
-                            ),
-                          ),
-                          Expanded(
-                            child: Text(
-                              a,
-                              style: AppTypography.expAchievement.copyWith(
-                                color: isDark
-                                    ? AppColors.textSecondary
-                                    : AppColors.lightTextSecondary,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
+            ],
+          ),
+        ),
+
+        // ── Timeline dot ───────────────────────────────────────────────
+        Positioned(
+          left: 5,
+          top: 4,
+          child: Container(
+            width: 10,
+            height: 10,
+            decoration: BoxDecoration(
+              color: AppColors.accent,
+              shape: BoxShape.circle,
+              boxShadow: [
+                BoxShadow(
+                  color: AppColors.accent.withValues(alpha: 0.4),
+                  blurRadius: 8,
+                ),
+              ],
             ),
           ),
-        ],
-      ),
+        ),
+
+        // ── Timeline connecting line ────────────────────────────────────
+        if (!isLast)
+          Positioned(
+            left: 9,
+            top: 18,
+            bottom: 0,
+            child: Container(
+              width: 1,
+              color: isDark ? AppColors.border : AppColors.lightBorder,
+            ),
+          ),
+      ],
     )
         .animate()
         .fadeIn(
