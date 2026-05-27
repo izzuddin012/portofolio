@@ -18,7 +18,7 @@ class AppConstants {
   static const String shortName = 'Izzuddin';
 
   // Used in hero heading (80 pt) and navbar logo
-  static const String firstName = 'Izzuddin';
+  static const String firstName = 'Muhammad Izzuddin';
 
   // Headline shown under the name
   static const String heroRole = 'Senior Mobile Apps Engineer';
@@ -316,7 +316,8 @@ const List<Project> projects = [
       'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/pickpack/pickpack_3.png',
       'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/pickpack/pickpack_4.png',
     ],
-    playStoreUrl: 'https://play.google.com/store/apps/details?id=id.allofresh.pickpack&hl=id', 
+    playStoreUrl:
+        'https://play.google.com/store/apps/details?id=id.allofresh.pickpack&hl=id',
   ),
 
   // ── Kingkong Meats ──────────────────────────────────────────────────────────
