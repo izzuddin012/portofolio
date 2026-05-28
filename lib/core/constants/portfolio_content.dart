@@ -339,18 +339,23 @@ const List<Project> projects = [
 
   // ── Developer Portfolio ─────────────────────────────────────────────────────
   Project(
-    title: 'Developer Portfolio (This Site)',
+    title: 'Devolio',
     description:
-        'This portfolio — built entirely in Flutter Web with clean architecture, '
+        'Open source web portfolio for developer — built entirely in Flutter Web with clean architecture, '
         'Riverpod state management, and GitHub Pages deployment.',
     techStack: ['Flutter Web', 'Riverpod', 'flutter_animate', 'GitHub Pages'],
     category: ProjectCategory.web,
+    demoUrl: 'https://izzuddin012.github.io/devolio-flutter/',
+    githubUrl: 'https://github.com/izzuddin012/devolio-flutter',
+    images: [
+      'https://raw.githubusercontent.com/izzuddin012/portofolio_assets/refs/heads/main/devolio/devolio_0.png',
+    ],
     contribution: [
       'Designed and built the full portfolio UI from scratch in Flutter Web',
       'Implemented responsive layouts for desktop, tablet, and mobile viewports',
       'Built dark/light theme toggle, smooth scroll navigation, and section entrance animations',
       'Created a single-file content system (portfolio_content.dart) for easy future updates',
-      'Set up GitHub Pages deployment with SPA routing via a custom 404.html redirect',
+      'Set up GitHub Pages deployment',
     ],
   ),
 ];
